@@ -1,4 +1,7 @@
-import '../stylesheets/App.scss';
+import "../stylesheets/App.scss";
+import api from "../service/api";
+
+api.getDataFromApi();
 
 const App = () => {
   return (
