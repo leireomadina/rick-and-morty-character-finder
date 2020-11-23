@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { Route, Switch } from "react-router-dom";
 import api from "../service/api";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
@@ -32,28 +33,33 @@ const App = () => {
   };
 
   //FILTER
-  const filteredCharacters = characters.filter(
-    (character) => {
-      const characterName = character.name;
-      return characterName.toLowerCase().includes(filterText.toLowerCase());
-    }
-  );
-  
+  const filteredCharacters = characters.filter((character) => {
+    const characterName = character.name;
+    return characterName.toLowerCase().includes(filterText.toLowerCase());
+  });
+
   return (
     <div className="App">
-      <Header />
-      <main>
-        <Filters handleFilter={handleFilter}/>
-        <CharacterList characters={filteredCharacters}/>
-        <CharacterDetail />
-      </main>
+      <Switch>
+        <Route exact path="/">
+          <Header />
+          <main>
+            <Filters handleFilter={handleFilter} />
+            <CharacterList characters={filteredCharacters} />
+          </main>
+        </Route>
+        <Route path="/character-detail/:characterId">
+          <Header />
+          <CharacterDetail />
+        </Route>
+      </Switch>
     </div>
   );
 };
 
 App.propTypes = {
   characters: PropTypes.array,
-  handleFilter: PropTypes.func
+  handleFilter: PropTypes.func,
 };
 
 export default App;

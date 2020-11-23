@@ -20,6 +20,7 @@ const CharacterCard = (props) => {
 };
 
 CharacterCard.propTypes = {
+  id: PropTypes.number,
   name: PropTypes.string,
   image: PropTypes.string,
   species: PropTypes.string,
