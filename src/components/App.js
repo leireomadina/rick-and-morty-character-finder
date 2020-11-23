@@ -1,7 +1,11 @@
 import "../stylesheets/App.scss";
 import api from "../service/api";
 
-api.getDataFromApi();
+const fetchData = api.getDataFromApi().then((data) => {
+   console.log(data);
+ });
+ console.log(fetchData);
+//  api.getDataFromApi();
 
 const App = () => {
   return (
