@@ -19,7 +19,7 @@ const character = props.characters.map((character) => {
   return (
     <section>
       <ul>
-      {character}
+        {character}
       </ul>
     </section>
   )
