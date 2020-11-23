@@ -6,7 +6,7 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 
 - [x] Plantear en papel la estructura de componentes para la web.
 - [x] Crear una nueva aplicación React.
-- [ ] Obtener los datos del API mediante un fetch
+- [x] Obtener los datos del API mediante un fetch
 - [ ] Pintar en pantalla los personajes
 - [ ] Filtrar los personajes por nombre
 - [ ] Pintar los detalles de personajes en otra página con React Router
