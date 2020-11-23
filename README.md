@@ -8,7 +8,7 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [x] Crear una nueva aplicación React.
 - [x] Obtener los datos del API mediante un fetch
 - [x] Pintar en pantalla los personajes
-- [ ] Filtrar los personajes por nombre
+- [x] Filtrar los personajes por nombre
 - [ ] Pintar los detalles de personajes en otra página con React Router
 - [ ] Bonus: mejoras visuales y diseño responsive
 - [ ] Bonus: URL de detalle de personajes compartible

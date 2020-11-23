@@ -7,7 +7,7 @@ const Filters = (props) => {
     // console.log("Entro en event");
     // console.log(event.target);
     const filterText = event.target.value;
-    console.log(filterText);
+    // console.log(filterText);
     props.handleFilter(filterText);
   };
 

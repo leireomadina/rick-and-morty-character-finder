@@ -26,16 +26,24 @@ const App = () => {
 
   //EVENT
   const handleFilter = (filterText) => {
-    console.log("Estoy en App y he hecho lifting");
+    // console.log("Estoy en App y he hecho lifting");
     setFilterText(filterText);
   };
+
+  //FILTER
+  const filteredCharacters = characters.filter(
+    (character) => {
+      const characterName = character.name;
+      return characterName.toLowerCase().includes(filterText.toLowerCase());
+    }
+  );
   
   return (
     <div className="App">
       <Header />
       <main>
         <Filters handleFilter={handleFilter}/>
-        <CharacterList characters={characters}/>
+        <CharacterList characters={filteredCharacters}/>
       </main>
     </div>
   );
