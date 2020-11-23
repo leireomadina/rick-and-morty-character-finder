@@ -13,6 +13,5 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [ ] Bonus: mejoras visuales y diseño responsive
 - [ ] Bonus: URL de detalle de personajes compartible
 - [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda
-- [ ] Bonus: 
 
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.
