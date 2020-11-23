@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import api from "../service/api";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
 import Filters from "./Filters";
 
@@ -44,6 +45,7 @@ const App = () => {
       <main>
         <Filters handleFilter={handleFilter}/>
         <CharacterList characters={filteredCharacters}/>
+        <CharacterDetail />
       </main>
     </div>
   );

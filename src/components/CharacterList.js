@@ -10,6 +10,7 @@ const CharacterList = (props) => {
     return (
       <li key={character.id}>
         <CharacterCard
+          id={character.id}
           name={character.name}
           image={character.image}
           species={character.species}
