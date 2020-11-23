@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const CharacterCard = (props) => {
-  // console.log(props.character);
+  // console.log(props);
   return (
     <article>
       <img
-        src={props.character.image}
-        alt={`Imagen de ${props.character.name}`}
-        title={`Imagen de ${props.character.name}`}
+        src={props.image}
+        alt={`Imagen de ${props.name}`}
+        title={`Imagen de ${props.name}`}
       />
-      <h2>{props.character.name}</h2>
-      <p>{props.character.species}</p>
+      <h2>{props.name}</h2>
+      <p>{props.species}</p>
     </article>
   );
 };
