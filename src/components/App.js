@@ -25,14 +25,16 @@ const App = () => {
   );
 
   //EVENT
-
+  const handleFilter = (filterText) => {
+    console.log("Estoy en App y he hecho lifting");
+    setFilterText(filterText);
+  };
   
-
   return (
     <div className="App">
       <Header />
       <main>
-        <Filters />
+        <Filters handleFilter={handleFilter}/>
         <CharacterList characters={characters}/>
       </main>
     </div>
@@ -41,6 +43,7 @@ const App = () => {
 
 App.propTypes = {
   characters: PropTypes.array,
+  handleFilter: PropTypes.func
 };
 
 export default App;
