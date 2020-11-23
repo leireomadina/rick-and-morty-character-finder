@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import api from "../service/api";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
 import "../stylesheets/App.scss";
+import Filters from "./Filters";
 
 const App = () => {
-  //State
+  // STATE
   const [characters, setCharacters] = useState([]);
-  // console.log(characters);
+  //Defines a new state for the text written in the input
+  const [filterText, setFilterText] = useState("");
 
   //API
   useEffect(
@@ -21,14 +24,23 @@ const App = () => {
     []
   );
 
+  //EVENT
+
+  
+
   return (
     <div className="App">
       <Header />
       <main>
+        <Filters />
         <CharacterList characters={characters}/>
       </main>
     </div>
   );
+};
+
+App.propTypes = {
+  characters: PropTypes.array,
 };
 
 export default App;
