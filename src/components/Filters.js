@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import React from "react"
 
 const Filters = (props) => {
@@ -6,9 +6,9 @@ const Filters = (props) => {
   const handleFilter = (event) => {
     // console.log("Entro en event");
     // console.log(event.target);
-    const filterText = event.target.value;
+    const inputValue = event.target.value;
     // console.log(filterText);
-    props.handleFilter(filterText);
+    props.handleFilter(inputValue);
   };
 
   return (
@@ -19,6 +19,10 @@ const Filters = (props) => {
       </form>
     </section>
   )
+};
+
+Filters.propTypes = {
+  handleFilter: PropTypes.func,
 };
 
 export default Filters;

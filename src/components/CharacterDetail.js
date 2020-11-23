@@ -17,4 +17,7 @@ const CharacterDetail = () => {
   )
 };
 
+CharacterDetail.propTypes = {
+};
+
 export default CharacterDetail;

@@ -27,9 +27,9 @@ const App = () => {
   );
 
   //EVENT
-  const handleFilter = (filterText) => {
+  const handleFilter = (inputValue) => {
     // console.log("Estoy en App y he hecho lifting");
-    setFilterText(filterText);
+    setFilterText(inputValue);
   };
 
   //FILTER
@@ -37,6 +37,15 @@ const App = () => {
     const characterName = character.name;
     return characterName.toLowerCase().includes(filterText.toLowerCase());
   });
+
+  //RENDER DETAIL
+  const renderDetail = (props) => {
+    // debugger;
+    // console.log(props.history);
+    console.log(props);
+    console.log(props.match.params.characterId);
+
+  };
 
   return (
     <div className="App">
@@ -48,10 +57,10 @@ const App = () => {
             <CharacterList characters={filteredCharacters} />
           </main>
         </Route>
-        <Route path="/character-detail/:characterId">
-          <Header />
-          <CharacterDetail />
-        </Route>
+        <Route path="/character-detail/:characterId" component={renderDetail}/>
+          {/* <Header /> */}
+          {/* <CharacterDetail /> */}
+        {/* </Route> */}
       </Switch>
     </div>
   );
@@ -60,6 +69,7 @@ const App = () => {
 App.propTypes = {
   characters: PropTypes.array,
   handleFilter: PropTypes.func,
+  renderDetail: PropTypes.func
 };
 
 export default App;
