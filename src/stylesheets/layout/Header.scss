@@ -1,0 +1,17 @@
+// Header component styles
+
+.main-header{
+  height: 300px;
+  text-align: center;
+  padding-top: 25px;
+
+  &__container {
+    height: 100%;
+    width: auto;
+  }
+
+  &__image{
+    height: 250px;
+    width: auto;
+  }
+}

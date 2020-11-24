@@ -85,7 +85,7 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Header />
-          <main>
+          <main className="main">
             <Filters handleFilter={handleFilter} filterText={filterText} />
             <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
           </main>

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react"
+import "../stylesheets/layout/Filters.scss";
 
 const Filters = (props) => {
   //EVENTS
@@ -14,10 +15,10 @@ const Filters = (props) => {
   };
 
   return (
-    <section>
+    <section className="form-section">
       <form onSubmit={handleSubmit}>
         <label htmlFor="character"></label>
-        <input type="text" id="character" name="character" placeholder="Type a character name" onChange={handleFilter} value={props.filterText}></input>
+        <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilter} value={props.filterText} className="form-section__input"></input>
       </form>
     </section>
   )

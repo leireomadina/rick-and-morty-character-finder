@@ -27,4 +27,15 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 
 ## Jerarquía de componentes
 
+- App
+  - Header
+  - CharacterDetail
+
+  - Header
+  - Filters
+  - CharacterList
+    - CharacterCard
+    - CharacterNotFound
+
+
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.

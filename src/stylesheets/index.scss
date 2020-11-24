@@ -1,0 +1,10 @@
+@import "./core/variables.scss";
+
+// General page styles
+body {
+  font-family: $font-main;
+}
+.main{
+  height: calc(100vh - 300px);
+  overflow-y: scroll;
+}

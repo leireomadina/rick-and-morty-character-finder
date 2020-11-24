@@ -1,0 +1,30 @@
+@import "../core/variables.scss";
+
+.form-section {
+  padding-bottom: 30px;
+
+  &__input {
+    width: 300px;
+    height: 40px;
+    // background-color: $color-bg;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $color-font-terciary;
+    // border: 2px solid $color-main;
+    font-size: 18px;
+    // border-radius: 25px;
+    // color: $color-font-secondary;
+    color: $color-font-terciary;
+    
+    &:focus{
+      outline: 2px solid white;
+      // background-color: $color-bg;
+    }
+
+    &::placeholder {
+      padding: 0 15px;
+      color: rgb(206, 206, 206);
+    }
+  }
+}
+
