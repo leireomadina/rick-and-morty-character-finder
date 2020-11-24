@@ -13,16 +13,16 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [ ] Detalles de calidad: 
   - [x] Campo de texto dentro de etiqueta form.
   - [x] Impedir que el navegador cambie de ruta o navegue al pulsar intro en el campo de texto.
-  - [ ] Mostrar mensaje cuando un personaje no se encuentra.
+  - [ ] Mostrar mensaje cuando un personaje no se encuentra tras búsqueda.
   - [x] Filtrado de texto independientemente de mayúsculas o minúsculas.
   - [x] Tras entrar en el detalle de un personaje, al volver atrás el input mantiene el texto escrito antes.
 - [ ] Bonus: mejoras visuales y diseño responsive:
-  - [ ] Mostrar especie y si un personaje está muerto con un icono
-  - [ ] Usar grid para listado de tarjetas de personajes
-  - [ ] Implementar diseño responsive
+  - [ ] Mostrar especie y si un personaje está muerto con un icono.
+  - [ ] Usar grid para listado de tarjetas de personajes.
+  - [ ] Implementar diseño responsive.
 - [ ] Bonus: URL de detalle de personajes compartible:
-  - [ ] Visitar detalle de personaje directamente escribiendo la URL
-  - [ ] Mostrar mensaje cuando un personaje no existe
-- [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda
+  - [x] Visitar detalle de personaje directamente escribiendo la URL.
+  - [x] Mostrar mensaje cuando un personaje no existe a través de URL.
+- [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda.
 
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.

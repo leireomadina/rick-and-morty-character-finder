@@ -61,7 +61,7 @@ const App = () => {
         </>
       );
     } else {
-      return <p>No hay ningún personaje que coincida con la búsqueda.</p>;
+      return <p>El personaje que buscas no existe</p>;
     }
   };
 
