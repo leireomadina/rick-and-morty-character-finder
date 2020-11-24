@@ -42,9 +42,32 @@ const App = () => {
   const renderDetail = (props) => {
     // debugger;
     // console.log(props.history);
-    console.log(props);
+    // console.log(props);
     console.log(props.match.params.characterId);
-
+    //turning the routeProductId value into a number to compare it with the productId (number value type)
+    const routeProductId = parseInt(props.match.params.characterId);
+    console.log(typeof routeProductId);
+    const clickedCharacter = characters.find((product) => {
+      const productId = product.id;
+      console.log(typeof productId);
+      //same as the commented code below
+      return routeProductId === productId;
+      /*
+      if(routeProductId === productId) {
+        return true
+      } else {
+        return false
+      }
+      */
+      // console.log(product.id);
+    });
+    //renders the searched character if it finds it. Else, returns a not found message
+    if(clickedCharacter) {
+      return <CharacterDetail />
+    } else {
+      return <p>No hay ningún personaje que coincida con la palabra XXX</p>
+    }
+    console.log(clickedCharacter);
   };
 
   return (
