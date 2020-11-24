@@ -23,7 +23,7 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [x] Bonus: URL de detalle de personajes compartible:
   - [x] Visitar detalle de personaje directamente escribiendo la URL.
   - [x] Mostrar mensaje cuando un personaje no existe a través de URL.
-- [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda.
+- [x] Bonus: ordenación de los personajes alfabéticamente en la búsqueda.
 
 ## Jerarquía de componentes
 

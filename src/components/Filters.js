@@ -25,7 +25,6 @@ const Filters = (props) => {
 
 Filters.propTypes = {
   handleFilter: PropTypes.func,
-  handleSubmit: PropTypes.func,
   filterText: PropTypes.string
 };
 

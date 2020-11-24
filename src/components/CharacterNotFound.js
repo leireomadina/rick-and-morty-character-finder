@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const CharacterNotFound = (props) => {
   return (
     <div>
-      <p>No hay ningún personaje que coincida con la palabra {props.filterText}</p>
+      <p>There isn't any character that matches the word {props.filterText}.</p>
     </div>
   )
 };

@@ -35,7 +35,6 @@ const App = () => {
   const renderFilteredCharacters = () => {
     const filteredCharacters = characters.filter((character) => {
       const characterName = character.name;
-      // console.log(characterName);
       return characterName.toLowerCase().includes(filterText.toLowerCase());
     });
     // sorts the filteredCharacters array's names alphabetically
@@ -51,14 +50,11 @@ const App = () => {
       // when a equals b:
       return 0;
     });
-    console.log(sortedcharactersNames);
-    console.log(filteredCharacters);
     return filteredCharacters;
   };
 
   //RENDER DETAIL
   const renderDetail = (props) => {
-    //turning the routeProductId value into a number to compare it with the productId (number value type)
     const routeProductId = parseInt(props.match.params.characterId);
     const clickedCharacter = characters.find((product) => {
       const productId = product.id;
@@ -80,7 +76,7 @@ const App = () => {
         </>
       );
     } else {
-      return <p>El personaje que buscas no existe.</p>;
+      return <p>The character you are looking for doesn't exist.</p>;
     }
   };
 
@@ -104,6 +100,7 @@ App.propTypes = {
   characters: PropTypes.array,
   handleFilter: PropTypes.func,
   renderDetail: PropTypes.func,
+  filterText: PropTypes.string,
   image: PropTypes.string,
   name: PropTypes.string,
   status: PropTypes.string,
