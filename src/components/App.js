@@ -71,7 +71,7 @@ const App = () => {
         <Route exact path="/">
           <Header />
           <main>
-            <Filters handleFilter={handleFilter} />
+            <Filters handleFilter={handleFilter} filterText={filterText}/>
             <CharacterList characters={filteredCharacters} />
           </main>
         </Route>

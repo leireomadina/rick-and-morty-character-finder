@@ -2,20 +2,22 @@ import PropTypes from "prop-types";
 import React from "react"
 
 const Filters = (props) => {
-  //EVENT
+  //EVENTS
   const handleFilter = (event) => {
-    // console.log("Entro en event");
-    // console.log(event.target);
     const inputValue = event.target.value;
-    // console.log(filterText);
     props.handleFilter(inputValue);
+  };
+
+  //Prevents the default submit event of the form
+  const handleSubmit = (event) => {
+    event.preventDefault();
   };
 
   return (
     <section>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="character"></label>
-        <input type="text" id="character" name="character" placeholder="Type a character name" onChange={handleFilter}></input>
+        <input type="text" id="character" name="character" placeholder="Type a character name" onChange={handleFilter} value={props.filterText}></input>
       </form>
     </section>
   )
@@ -23,6 +25,8 @@ const Filters = (props) => {
 
 Filters.propTypes = {
   handleFilter: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  filterText: PropTypes.string
 };
 
 export default Filters;
