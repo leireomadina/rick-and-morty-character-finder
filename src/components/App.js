@@ -31,37 +31,49 @@ const App = () => {
     setFilterText(inputValue);
   };
 
-  //FILTER
-  const filteredCharacters = characters.filter((character) => {
-    const characterName = character.name;
-    // console.log(characterName);
-    return characterName.toLowerCase().includes(filterText.toLowerCase());
-
-  });
-  // console.log(filteredCharacters);
+  //RENDER FILTER
+  const renderFilteredCharacters = () => {
+    const filteredCharacters = characters.filter((character) => {
+      const characterName = character.name;
+      // console.log(characterName);
+      return characterName.toLowerCase().includes(filterText.toLowerCase());
+    });
+    console.log(filteredCharacters);
+    // createCharacterNameArray().sort();
+    return filteredCharacters;
+  };
 
   //SORT
+  const sortByName = () => {
+
+  };
+
+  //SORT experiments
   const createCharacterNameArray = () => {
     // console.log(characterName);
-    let emptyArray = [];
+    let charactersNameArray = [];
     let charactersNames = characters.map((character) => {
         const characterName = character.name;
         // console.log(characterName);
-        emptyArray.push(characterName);
-        console.log(emptyArray);
-        // return emptyArray;
+        charactersNameArray.push(characterName);
+        // console.log(charactersNameArray);
+        // return charactersNameArray;
       });
-      return emptyArray;
+      return charactersNameArray;
     };
     createCharacterNameArray();
     console.log(createCharacterNameArray().sort());
+    //works
 
 const characterNamesArray = ["Summer", "Rick", "Morty", "Beth"];
 const sortByNameY = () => {
   const newArray = characterNamesArray.sort();
   // console.log(newArray);
+  //works
 } 
 sortByNameY();
+
+  //END SORT experiments
 
   //RENDER DETAIL
   const renderDetail = (props) => {
@@ -97,8 +109,8 @@ sortByNameY();
         <Route exact path="/">
           <Header />
           <main>
-            <Filters handleFilter={handleFilter} filterText={filterText}/>
-            <CharacterList characters={filteredCharacters} filterText={filterText}/>
+            <Filters handleFilter={handleFilter} filterText={filterText} />
+            <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
