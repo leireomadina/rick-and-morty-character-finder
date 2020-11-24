@@ -4,7 +4,6 @@ import CharacterCard from "./CharacterCard";
 import CharacterNotFound from "./CharacterNotFound";
 
 const CharacterList = (props) => {
-  // console.log(props.filterText);
   //MAP
   const characterItems = props.characters.map((character) => {
     return (
@@ -21,7 +20,6 @@ const CharacterList = (props) => {
     );
   });
 
-  // console.log(characterItems.length);
   const notFound = () => {
     // Renders the not found component if the list of characters is empty after during the user's search
     if (characterItems.length === 0) {
