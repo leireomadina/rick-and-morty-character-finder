@@ -21,10 +21,9 @@ const CharacterList = (props) => {
     );
   });
 
-  console.log(characterItems.length);
-
+  // console.log(characterItems.length);
   const notFound = () => {
-    // If the list of characters is 0, render the not found message
+    // Renders the not found component if the list of characters is empty after during the user's search
     if (characterItems.length === 0) {
       return <CharacterNotFound filterText={props.filterText}/>
     }
