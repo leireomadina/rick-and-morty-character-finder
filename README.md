@@ -25,4 +25,6 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
   - [x] Mostrar mensaje cuando un personaje no existe a través de URL.
 - [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda.
 
+## Jerarquía de componentes
+
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.

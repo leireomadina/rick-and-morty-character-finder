@@ -72,7 +72,7 @@ const App = () => {
           <Header />
           <main>
             <Filters handleFilter={handleFilter} filterText={filterText}/>
-            <CharacterList characters={filteredCharacters} />
+            <CharacterList characters={filteredCharacters} filterText={filterText}/>
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
