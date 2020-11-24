@@ -9,6 +9,7 @@ import "../stylesheets/App.scss";
 import Filters from "./Filters";
 
 const App = () => {
+
   // STATE
   const [characters, setCharacters] = useState([]);
   //Defines a new state for the text written in the input
@@ -18,7 +19,6 @@ const App = () => {
   useEffect(
     () => {
       api.getDataFromApi().then((data) => {
-        // console.log(data);
         setCharacters(data);
       });
     },
@@ -28,7 +28,6 @@ const App = () => {
 
   //EVENT
   const handleFilter = (inputValue) => {
-    // console.log("Estoy en App y he hecho lifting");
     setFilterText(inputValue);
   };
 
@@ -40,24 +39,14 @@ const App = () => {
 
   //RENDER DETAIL
   const renderDetail = (props) => {
-    // debugger;
-    // console.log(props.history);
-    // console.log(props);
-    // console.log(props.match.params.characterId);
     //turning the routeProductId value into a number to compare it with the productId (number value type)
     const routeProductId = parseInt(props.match.params.characterId);
-    // console.log(typeof routeProductId);
     const clickedCharacter = characters.find((product) => {
       const productId = product.id;
-      // console.log(typeof productId);
-      //same as the commented code below
       return routeProductId === productId;
-      // console.log(product.id);
     });
     //renders the searched character if it finds it. Else, returns a not found message
     if (clickedCharacter !== undefined) {
-      // console.log(clickedCharacter);
-      // console.log(clickedCharacter.episode.length);
       return (
         <>
         <Header />

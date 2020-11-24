@@ -1,5 +1,3 @@
-import { useLayoutEffect } from "react";
-
 const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 
 const getDataFromApi = () => {

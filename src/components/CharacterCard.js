@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
-  // console.log(props);
   return (
     <Link to={`/character-detail/${props.id}`} title={"See this character's details"}>
       <article>

@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import CharacterCard from "./CharacterCard";
 
 const CharacterList = (props) => {
-  // console.log(props.characters);
+  //MAP
   const characterItems = props.characters.map((character) => {
-    // console.log(character);
-    // console.log(character.id);
     return (
       <li key={character.id}>
         <CharacterCard
@@ -18,6 +16,7 @@ const CharacterList = (props) => {
       </li>
     );
   });
+
   return (
     <section>
       <ul>{characterItems}</ul>
