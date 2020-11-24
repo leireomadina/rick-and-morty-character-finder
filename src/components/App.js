@@ -34,8 +34,34 @@ const App = () => {
   //FILTER
   const filteredCharacters = characters.filter((character) => {
     const characterName = character.name;
+    // console.log(characterName);
     return characterName.toLowerCase().includes(filterText.toLowerCase());
+
   });
+  // console.log(filteredCharacters);
+
+  //SORT
+  const createCharacterNameArray = () => {
+    // console.log(characterName);
+    let emptyArray = [];
+    let charactersNames = characters.map((character) => {
+        const characterName = character.name;
+        // console.log(characterName);
+        emptyArray.push(characterName);
+        console.log(emptyArray);
+        // return emptyArray;
+      });
+      return emptyArray;
+    };
+    createCharacterNameArray();
+    console.log(createCharacterNameArray().sort());
+
+const characterNamesArray = ["Summer", "Rick", "Morty", "Beth"];
+const sortByNameY = () => {
+  const newArray = characterNamesArray.sort();
+  // console.log(newArray);
+} 
+sortByNameY();
 
   //RENDER DETAIL
   const renderDetail = (props) => {
