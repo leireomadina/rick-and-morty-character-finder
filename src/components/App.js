@@ -31,15 +31,30 @@ const App = () => {
     setFilterText(inputValue);
   };
 
-  //FILTER
-  const filteredCharacters = characters.filter((character) => {
-    const characterName = character.name;
-    return characterName.toLowerCase().includes(filterText.toLowerCase());
-  });
+  //RENDER FILTER + SORT
+  const renderFilteredCharacters = () => {
+    const filteredCharacters = characters.filter((character) => {
+      const characterName = character.name;
+      return characterName.toLowerCase().includes(filterText.toLowerCase());
+    });
+    // sorts the filteredCharacters array's names alphabetically
+    const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
+      if (a.name < b.name) {
+        //a will come before b
+        return -1;
+      } 
+      if (a.name > b.name) {
+        //b will come before a
+        return 1;
+      }
+      // when a equals b:
+      return 0;
+    });
+    return filteredCharacters;
+  };
 
   //RENDER DETAIL
   const renderDetail = (props) => {
-    //turning the routeProductId value into a number to compare it with the productId (number value type)
     const routeProductId = parseInt(props.match.params.characterId);
     const clickedCharacter = characters.find((product) => {
       const productId = product.id;
@@ -61,7 +76,7 @@ const App = () => {
         </>
       );
     } else {
-      return <p>No hay ningún personaje que coincida con la búsqueda.</p>;
+      return <p>The character you are looking for doesn't exist.</p>;
     }
   };
 
@@ -71,8 +86,8 @@ const App = () => {
         <Route exact path="/">
           <Header />
           <main>
-            <Filters handleFilter={handleFilter} />
-            <CharacterList characters={filteredCharacters} />
+            <Filters handleFilter={handleFilter} filterText={filterText} />
+            <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
@@ -85,6 +100,7 @@ App.propTypes = {
   characters: PropTypes.array,
   handleFilter: PropTypes.func,
   renderDetail: PropTypes.func,
+  filterText: PropTypes.string,
   image: PropTypes.string,
   name: PropTypes.string,
   status: PropTypes.string,

@@ -10,19 +10,21 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [x] Pintar en pantalla los personajes.
 - [x] Filtrar los personajes por nombre.
 - [x] Pintar los detalles de personajes en otra página con React Router.
-- [ ] Detalles de calidad: 
+- [x] Detalles de calidad: 
   - [x] Campo de texto dentro de etiqueta form.
-  - [ ] Impedir que el navegador cambie de ruta o navegue al pulsar intro en el campo de texto.
-  - [ ] Mostrar mensaje cuando un personaje no se encuentra.
+  - [x] Impedir que el navegador cambie de ruta o navegue al pulsar intro en el campo de texto.
+  - [x] Mostrar mensaje cuando un personaje no se encuentra tras búsqueda.
   - [x] Filtrado de texto independientemente de mayúsculas o minúsculas.
-  - [ ] Tras entrar en detalle de personaje y al volver atrás el input mantiene el texto escrito.
+  - [x] Tras entrar en el detalle de un personaje, al volver atrás el input mantiene el texto escrito antes.
 - [ ] Bonus: mejoras visuales y diseño responsive:
-  - [ ] Mostrar especie y si un personaje está muerto con un icono
-  - [ ] Usar grid para listado de tarjetas de personajes
-  - [ ] Implementar diseño responsive
-- [ ] Bonus: URL de detalle de personajes compartible:
-  - [ ] Visitar detalle de personaje directamente escribiendo la URL
-  - [ ] Mostrar mensaje cuando un personaje no existe
-- [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda
+  - [ ] Mostrar especie y si un personaje está muerto con un icono.
+  - [ ] Usar grid para listado de tarjetas de personajes.
+  - [ ] Implementar diseño responsive.
+- [x] Bonus: URL de detalle de personajes compartible:
+  - [x] Visitar detalle de personaje directamente escribiendo la URL.
+  - [x] Mostrar mensaje cuando un personaje no existe a través de URL.
+- [x] Bonus: ordenación de los personajes alfabéticamente en la búsqueda.
+
+## Jerarquía de componentes
 
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.
