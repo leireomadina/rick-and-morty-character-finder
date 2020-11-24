@@ -9,7 +9,8 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
 - [x] Obtener los datos del API mediante un fetch
 - [x] Pintar en pantalla los personajes
 - [x] Filtrar los personajes por nombre
-- [ ] Pintar los detalles de personajes en otra página con React Router
+- [x] Pintar los detalles de personajes en otra página con React Router
+- [ ] Detalles de calidad: cuidar semántica, preventDefault en formulario, etc.
 - [ ] Bonus: mejoras visuales y diseño responsive
 - [ ] Bonus: URL de detalle de personajes compartible
 - [ ] Bonus: ordenación de los personajes alfabéticamente en la búsqueda
