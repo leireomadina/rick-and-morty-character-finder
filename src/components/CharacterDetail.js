@@ -1,23 +1,37 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
-const CharacterDetail = () => {
+const CharacterDetail = (props) => {
+  // console.log(props);
   return (
     <main>
       <section>
         <article>
-          <img />
-          <h2>Nombre</h2>
-          <p>Especie</p>
-          <p>Planeta de origen</p>
-          <p>Número de episodios</p>
-          <p>Estado</p>
+          <div>
+            <img src={props.image} alt={`Image of ${props.name}`} title={`Image of ${props.name}`}/>
+          </div>
+          <div>
+            <h2>{props.name}</h2>
+            <p>{props.status}</p>
+            <p>{props.species}</p>
+            <p>{props.origin}</p>
+            <p>{props.episode}</p>
+          </div>
         </article>
       </section>
     </main>
-  )
+  );
 };
 
 CharacterDetail.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  origin: PropTypes.string,
+  episode: PropTypes.number,
 };
+
+CharacterDetail.defaultProps = {};
 
 export default CharacterDetail;

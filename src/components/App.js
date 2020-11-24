@@ -43,31 +43,37 @@ const App = () => {
     // debugger;
     // console.log(props.history);
     // console.log(props);
-    console.log(props.match.params.characterId);
+    // console.log(props.match.params.characterId);
     //turning the routeProductId value into a number to compare it with the productId (number value type)
     const routeProductId = parseInt(props.match.params.characterId);
-    console.log(typeof routeProductId);
+    // console.log(typeof routeProductId);
     const clickedCharacter = characters.find((product) => {
       const productId = product.id;
-      console.log(typeof productId);
+      // console.log(typeof productId);
       //same as the commented code below
       return routeProductId === productId;
-      /*
-      if(routeProductId === productId) {
-        return true
-      } else {
-        return false
-      }
-      */
       // console.log(product.id);
     });
     //renders the searched character if it finds it. Else, returns a not found message
-    if(clickedCharacter) {
-      return <CharacterDetail />
+    if (clickedCharacter !== undefined) {
+      // console.log(clickedCharacter);
+      // console.log(clickedCharacter.episode.length);
+      return (
+        <>
+        <Header />
+        <CharacterDetail
+          image={clickedCharacter.image}
+          name={clickedCharacter.name}
+          status={clickedCharacter.status}
+          species={clickedCharacter.species}
+          origin={clickedCharacter.origin.name}
+          episode={clickedCharacter.episode.length}
+        />
+        </>
+      );
     } else {
-      return <p>No hay ningún personaje que coincida con la palabra XXX</p>
+      return <p>No hay ningún personaje que coincida con la búsqueda.</p>;
     }
-    console.log(clickedCharacter);
   };
 
   return (
@@ -80,10 +86,7 @@ const App = () => {
             <CharacterList characters={filteredCharacters} />
           </main>
         </Route>
-        <Route path="/character-detail/:characterId" component={renderDetail}/>
-          {/* <Header /> */}
-          {/* <CharacterDetail /> */}
-        {/* </Route> */}
+        <Route path="/character-detail/:characterId" component={renderDetail} />
       </Switch>
     </div>
   );
@@ -92,7 +95,13 @@ const App = () => {
 App.propTypes = {
   characters: PropTypes.array,
   handleFilter: PropTypes.func,
-  renderDetail: PropTypes.func
+  renderDetail: PropTypes.func,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  origin: PropTypes.string,
+  episode: PropTypes.number,
 };
 
 export default App;
