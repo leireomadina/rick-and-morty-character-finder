@@ -8,6 +8,7 @@ const CharacterList = (props) => {
   //MAP
   const characterItems = props.characters.map((character) => {
     return (
+      <>
       <li key={character.id}>
         <CharacterCard
           id={character.id}
@@ -16,13 +17,23 @@ const CharacterList = (props) => {
           species={character.species}
         />
       </li>
+      </>
     );
   });
 
+  console.log(characterItems.length);
+
+  const notFound = () => {
+    // If the list of characters is 0, render the not found message
+    if (characterItems.length === 0) {
+      return <CharacterNotFound filterText={props.filterText}/>
+    }
+  };
+ 
   return (
     <section>
       <ul>{characterItems}</ul>
-      <CharacterNotFound filterText={props.filterText}/>
+      {notFound()}
     </section>
   );
 };
