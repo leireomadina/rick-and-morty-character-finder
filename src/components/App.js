@@ -31,49 +31,30 @@ const App = () => {
     setFilterText(inputValue);
   };
 
-  //RENDER FILTER
+  //RENDER FILTER + SORT
   const renderFilteredCharacters = () => {
     const filteredCharacters = characters.filter((character) => {
       const characterName = character.name;
       // console.log(characterName);
       return characterName.toLowerCase().includes(filterText.toLowerCase());
     });
+    // sorts the filteredCharacters array's names alphabetically
+    const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
+      if (a.name < b.name) {
+        //a will come before b
+        return -1;
+      } 
+      if (a.name > b.name) {
+        //b will come before a
+        return 1;
+      }
+      // when a equals b:
+      return 0;
+    });
+    console.log(sortedcharactersNames);
     console.log(filteredCharacters);
-    // createCharacterNameArray().sort();
     return filteredCharacters;
   };
-
-  //SORT
-  const sortByName = () => {
-
-  };
-
-  //SORT experiments
-  const createCharacterNameArray = () => {
-    // console.log(characterName);
-    let charactersNameArray = [];
-    let charactersNames = characters.map((character) => {
-        const characterName = character.name;
-        // console.log(characterName);
-        charactersNameArray.push(characterName);
-        // console.log(charactersNameArray);
-        // return charactersNameArray;
-      });
-      return charactersNameArray;
-    };
-    createCharacterNameArray();
-    console.log(createCharacterNameArray().sort());
-    //works
-
-const characterNamesArray = ["Summer", "Rick", "Morty", "Beth"];
-const sortByNameY = () => {
-  const newArray = characterNamesArray.sort();
-  // console.log(newArray);
-  //works
-} 
-sortByNameY();
-
-  //END SORT experiments
 
   //RENDER DETAIL
   const renderDetail = (props) => {
