@@ -11,14 +11,14 @@
     width: 3px;
   }
   &::-webkit-scrollbar-track {
-    background: black;
+    background: $color-font-secondary;
   }
   //handle and hover styles 
   &::-webkit-scrollbar-thumb {
-    background:  rgb(238, 81, 171);
+    background:  $color-main;
   }
   &::-webkit-scrollbar-thumb:hover {
-    background:  rgb(249, 3, 95);
+    background:  $color-terciary;
   }
 }
 

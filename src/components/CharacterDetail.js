@@ -8,6 +8,7 @@ const CharacterDetail = (props) => {
       return "💀";
     }
   };
+
   return (
     <main className="detail-page">
       <article className="detail-card">

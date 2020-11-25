@@ -11,6 +11,7 @@ const CharacterCard = (props) => {
       return "👽";
     }
   };
+
   return (
     <Link
       to={`/character-detail/${props.id}`}
