@@ -1,18 +1,24 @@
-.detail-page{
-  
-}
+@import "../core/variables.scss";
+
+// Character detail card styles
 
 .detail-card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 10px;
-  // background: linear-gradient(#cc2b2b, #860780);
-  background-color: black;
+  padding: 15px 10px 10px 10px;
+  background-color: rgb(15, 15, 15);
   text-align: center;
   border-radius: 15px;
   color: white;
+  width: 250px;
+  box-shadow: 3px 3px 3px 0px black;
+
+
+  @media all and (min-width: 768px) {
+    width: 300px;
+  }
 
   &__image-container {
     width: 100%;
@@ -20,9 +26,14 @@
   }
 
   &__image {
-    width: 250px;
+    width: 180px;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 50%;
+
+    @media all and (min-width: 768px) {
+      width: 250px;
+    }
   }
 
   &__name{

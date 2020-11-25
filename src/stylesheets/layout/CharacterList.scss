@@ -1,21 +1,22 @@
+@import "../core/variables.scss";
+
+// Cards container styles
+
 .cards-section {
   overflow-y: scroll;
   height: calc(100vh - 330px);  
   scroll-behavior: smooth;
-
-  // scrollbar styles
+  // Scrollbar styles:
   &::-webkit-scrollbar {
     width: 3px;
   }
-  /* Track */
   &::-webkit-scrollbar-track {
     background: black;
   }
-  /* Handle */
+  //handle and hover styles 
   &::-webkit-scrollbar-thumb {
     background:  rgb(238, 81, 171);
   }
-  /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background:  rgb(249, 3, 95);
   }
