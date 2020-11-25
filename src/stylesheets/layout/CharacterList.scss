@@ -1,6 +1,7 @@
 .cards-section {
   overflow-y: scroll;
-  height: calc(100vh - 150px);  
+  height: calc(100vh - 250px);  
+  scroll-behavior: smooth;
 }
 
 .cards-container{

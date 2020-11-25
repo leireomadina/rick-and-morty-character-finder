@@ -6,7 +6,6 @@ import "../stylesheets/layout/CharacterCard.scss";
 const CharacterCard = (props) => {
   const checkSpecies = () => {
     if (props.species === "Human") {
-      console.log(props.species);
       return "🌎";
     } else {
       return "👽";

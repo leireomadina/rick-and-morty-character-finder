@@ -1,0 +1,36 @@
+.detail-page{
+  
+}
+
+.detail-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  background: linear-gradient(#cc2b2b, #860780);
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+
+  &__image-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  &__name{
+    margin-bottom: 15px;
+    max-width: 270px;
+  }
+
+  &__text {
+    margin-bottom: 8px;
+    max-width: 270px;
+  }
+}
