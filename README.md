@@ -21,12 +21,12 @@ Para desarrollar esta SPA he utilizado, entre otras, las siguientes tecnologías
 Estos son los componentes y archivos con los que he trabajado:
 
 - **App**: componente raíz del proyecto. Primero se encarga de recoger los datos del API haciendo uso del ciclo de vida de los componentes para evitar llamadas innecesarias a la misma. Dichos datos son recogidos en su estado, y pasados por props a sus componentes hijos. Además, recibe por lifting el evento y la información que la usuaria escribe en el campo de texto, la cual es utilizada para filtrar los nombres de los personajes que coincidan con dicho texto y renderizarlos en orden alfabético.
-- **Header**: componente hijo de App. Se encarga de renderizar el header con su correspondiente logo en ambas páginas (la de tarjetas y la de detalle)
+- **Header**: componente hijo de App. Se encarga de renderizar el header con su correspondiente logo en ambas páginas (la de tarjetas y la de detalle).
 - **Filters**: componente hijo de App. Encargado de pintar el campo de texto que busca el nombre del personaje. Contiene  un evento que sube hasta App mediante lifting.
-- **CharacterDetail**: componente hijo de App. Su función es renderizar en otra página la tarjeta de detalle de un personaje una vez la usaria la selecciona, y para ello he utilizado la librería React Router.
+- **CharacterDetail**: componente hijo de App. Su función es renderizar en otra página la tarjeta de detalle de un personaje una vez la usaria la selecciona. Para ello he utilizado la librería React Router.
 - **CharacterList**: componente hijo de App. Recibe por props los datos de su componente madre y se encarga de pintar una lista que contendrá, mediante un mapeo, cada una de las tarjetas de los personajes como un item dentro de dicha lista.
 - **CharacterCard**: componente hijo de CharacterList y nieto de App. Se encarga de pintar el contenido dentro de cada tarjeta de personaje: cada una es un article que contiene una imagen, nombre y especie del personaje en cuestión.
-- **CharacterNotFound**: componente hijo de CharacterList y nieto de App. Su función es renderizar un mensaje de texto que aparece cuando la usuario busca un nombre que no existe.
+- **CharacterNotFound**: componente hijo de CharacterList y nieto de App. Su función es renderizar un mensaje de texto que aparece cuando la usuaria busca un nombre que no existe.
 - **api**: archivo dentro de la carpeta Service que recoge la llamada a la API mediante un fetch y además muestra un mensaje de error si la comunicación con el mismo falla. 
 
 
@@ -60,9 +60,9 @@ A continuación se muestra una lista de las funcionalidades que he ido añadiend
 
 Próximamente implementaré las siguientes nuevas funcionalidades en la página para mejorar la experiencia de usuario. Se aceptan sugerencias 😊
 
-- [ ] Añadir un botón en la tarjeta de detalle del persona para poder volver a la página principal.
+- [ ] Añadir un botón en la tarjeta de detalle del personaje para poder volver a la página principal.
 - [ ] Incorporar un cursor personalizado.
-- [ ] Añadir un botón que permita ordenar o no los personajes alfabéticamente.
+- [ ] Añadir un botón que permita elegir a la usuaria si quiere ordenar o no los personajes alfabéticamente.
 
 ---
 
