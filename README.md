@@ -1,5 +1,22 @@
 # Ejercicio de evaluación final con React - Módulo 3 Adalab
 
+![Gif of a shining pokeball](./src/images/rick-gif.gif)
+ ==*Wubba Lubba Dub Dub!*==
+
+##  Enunciado
+
+Este ejercicio forma parte de la evaluación final del módulo 3 del bootcamp Adalab. Consiste en desarrollar una página web utilizando el framework **React**. 
+
+Se trata de un listado de personajes de ** **Rick and Morty**, que podemos filtrar por el nombre del personaje y además seleccionar para ver una ficha detallada del mismo.
+
+Para desarrollar esta SPA he utilizado, entre otras, las siguientes tecnologías: **React, JavaScript **y** SASS**.
+
+
+## Resultado final
+
+![Image of the web final result showing ten pokemons](./src/images/result.png)
+
+
 ## Pasos realizados
 
 A continuación se muestra una lista de las nuevas funcionalidades que vamos a ir añadiendo en la página:
@@ -37,5 +54,16 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
     - CharacterCard
     - CharacterNotFound
 
+App
+ ├─ Header 
+ ├─ CharacterDetail
+ ├─ Header 
+ ├─ Filters 
+ ├─ CharacterList 
+ |  ├─ CharacterCard
+ |  └─ CharacterNotFound
+
+
+---
 
 Este proyecto ha sido desarrollado por **Leire Ordeñana Madina** como alumna de Adalab.
