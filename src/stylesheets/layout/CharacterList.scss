@@ -1,0 +1,18 @@
+.cards-section {
+  overflow-y: scroll;
+  height: calc(100vh - 150px);  
+}
+
+.cards-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto-fill;
+  // align-content: center;
+  // justify-content: center;
+
+  &__item {
+    grid-column: 1 / 2;
+    align-self: center;
+    justify-self: center;
+  }
+}

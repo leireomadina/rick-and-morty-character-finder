@@ -1,0 +1,41 @@
+@import "../core/variables.scss";
+
+// Character card styles
+
+.card{
+
+  // height: 250px;
+  width: 200px;
+  background-color:  rgb(112, 8, 112);
+  background-color: rgb(199, 43, 43);
+  background: linear-gradient(#cc2b2b, #860780);
+  // background-color: black;
+  margin-bottom: 20px;
+  // margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 3px solid white;
+  color: white;
+  border-radius: 15px;
+  padding: 18px 10px;
+
+  &__image{
+    height: auto;
+    width: 180px;
+    // border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  &__name{
+    font-size: 18px;
+    margin-bottom: 5px;
+    max-width: 150px;
+    text-align: center;
+  }
+
+  &__species{
+    font-size: 14px;
+  }
+}

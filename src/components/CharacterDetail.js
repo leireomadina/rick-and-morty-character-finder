@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CharacterDetail = (props) => {
   return (
-    <main>
+    <main className="main">
         <article>
           <div>
             <img src={props.image} alt={`Image of ${props.name}`} title={`Image of ${props.name}`}/>

@@ -2,22 +2,25 @@
 
 .form-section {
   padding-bottom: 30px;
+  // border: 1px solid red;
 
   &__input {
     width: 300px;
+    margin: 0 auto;
     height: 40px;
-    // background-color: $color-bg;
-    background-color: transparent;
+    background-color: white;
+    // background-color: transparent;
     border: none;
-    border-bottom: 2px solid $color-font-terciary;
+    // border-bottom: 2px solid $color-font-terciary;
     // border: 2px solid $color-main;
     font-size: 18px;
-    // border-radius: 25px;
+    border-radius: 25px;
     // color: $color-font-secondary;
-    color: $color-font-terciary;
+    padding: 0 8px;
+    color: black;
     
     &:focus{
-      outline: 2px solid white;
+      // outline: 2px solid white;
       // background-color: $color-bg;
     }
 
