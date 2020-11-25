@@ -16,7 +16,10 @@ const CharacterDetail = (props) => {
           </div>
           <div>
             <h2>{props.name}</h2>
-            <p>{props.status}</p>
+            <p>
+              {props.status}
+              <span> {checkStatus()}</span>
+            </p>
             <p>{props.species}</p>
             <p>{props.origin}</p>
             <p>{props.episode}</p>
