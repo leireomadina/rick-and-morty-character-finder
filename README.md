@@ -18,7 +18,7 @@ A continuación se muestra una lista de las nuevas funcionalidades que vamos a i
   - [x] Tras entrar en el detalle de un personaje, al volver atrás el input mantiene el texto escrito antes.
 - [ ] Bonus: mejoras visuales y diseño responsive:
   - [ ] Mostrar especie y si un personaje está muerto con un icono.
-  - [ ] Usar grid para listado de tarjetas de personajes.
+  - [x] Usar grid para listado de tarjetas de personajes.
   - [ ] Implementar diseño responsive.
 - [x] Bonus: URL de detalle de personajes compartible:
   - [x] Visitar detalle de personaje directamente escribiendo la URL.
