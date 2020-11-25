@@ -2,11 +2,12 @@
 
 .form-section {
   padding-bottom: 30px;
-  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__input {
     width: 300px;
-    margin: 0 auto;
     height: 40px;
     background-color: white;
     // background-color: transparent;

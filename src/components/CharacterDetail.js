@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const CharacterDetail = (props) => {
+  const checkStatus= () => {
+    if (props.status === "Dead") {
+      console.log(props.species);
+      return "💀";
+    }
+  };
   return (
     <main className="main">
         <article>
