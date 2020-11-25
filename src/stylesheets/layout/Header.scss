@@ -1,0 +1,32 @@
+// Header component styles
+
+// Animation
+@keyframes neon {
+  from {
+    opacity: 1;
+  }
+   50% {
+     opacity: 0.85;
+   }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-header{
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 15px;
+
+  &__image {
+    height: 150px;
+    width: auto;
+    animation-name: neon;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+    @media all and (min-width: 768px) {
+      height: 200px;
+    }
+  }
+}

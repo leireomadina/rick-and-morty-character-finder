@@ -55,10 +55,10 @@ const App = () => {
 
   //RENDER DETAIL
   const renderDetail = (props) => {
-    const routeProductId = parseInt(props.match.params.characterId);
-    const clickedCharacter = characters.find((product) => {
-      const productId = product.id;
-      return routeProductId === productId;
+    const routeCharacterId = parseInt(props.match.params.characterId);
+    const clickedCharacter = characters.find((character) => {
+      const characterId = character.id;
+      return routeCharacterId === characterId;
     });
     //renders the searched character if it finds it. Else, returns a not found message
     if (clickedCharacter !== undefined) {
@@ -85,7 +85,7 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Header />
-          <main>
+          <main className="main">
             <Filters handleFilter={handleFilter} filterText={filterText} />
             <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
           </main>

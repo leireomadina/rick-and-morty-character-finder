@@ -1,0 +1,22 @@
+// Core
+@import "core/variables";
+@import "core/reset";
+
+// Background image container styles
+
+.App {
+  padding: 15px;
+  height: 100vh;
+  background-image: url(../images/background.png);
+  background-position: 4.5% bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 1200px) {
+    background-position: center bottom;
+  }
+}
