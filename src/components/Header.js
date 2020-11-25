@@ -1,6 +1,6 @@
 import React from "react"
 // import logo from "../images/Rick-and-Morty-logo.png"
-import logo from "../images/logo.png"
+import logo from "../images/neon-logo.png"
 import "../stylesheets/layout/Header.scss";
 
 const Header = () => {

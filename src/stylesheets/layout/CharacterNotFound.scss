@@ -1,0 +1,22 @@
+.not-found-container {
+  text-align: center;
+  margin: 0 auto;
+  // background-color: black;
+  max-width: 600px;
+  padding: 20px;
+
+  &__text {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  &__gif {
+    width: 300px;
+    border: 8px solid black;
+
+    @media all and (min-width: 768px) {
+      width: 600px;
+    }
+  }
+}

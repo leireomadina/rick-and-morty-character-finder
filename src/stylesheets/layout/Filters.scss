@@ -9,25 +9,26 @@
   &__input {
     width: 300px;
     height: 40px;
-    background-color: white;
-    // background-color: transparent;
+    // background-color: white;
+    background-color: transparent;
     border: none;
-    // border-bottom: 2px solid $color-font-terciary;
+    // border-bottom: 2px solid rgb(228, 228, 228);
+    border-bottom: 3px solid black;
+
     // border: 2px solid $color-main;
     font-size: 18px;
-    border-radius: 25px;
+    // border-radius: 25px;
     // color: $color-font-secondary;
     padding: 0 8px;
-    color: black;
+    color: white;
     
     &:focus{
-      // outline: 2px solid white;
-      // background-color: $color-bg;
+      outline: 2px solid white;
     }
 
     &::placeholder {
       padding: 0 15px;
-      color: rgb(206, 206, 206);
+      color: rgb(228, 228, 228);
     }
   }
 }
