@@ -9,7 +9,6 @@ const CharacterList = (props) => {
   //MAP
   const characterItems = props.characters.map((character) => {
     return (
-      <>
       <li key={character.id} className="cards-container__item">
         <CharacterCard
           id={character.id}
@@ -18,7 +17,6 @@ const CharacterList = (props) => {
           species={character.species}
         />
       </li>
-      </>
     );
   });
 

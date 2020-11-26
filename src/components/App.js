@@ -7,6 +7,7 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
 import Filters from "./Filters";
+import FilterOrigin from "./FilterOrigin";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   //Defines a new state for the text written in the input
   const [filterText, setFilterText] = useState("");
+  const [filterOrigin, setFilterOrigin] = useState(false);
 
   //API
   useEffect(
@@ -31,12 +33,27 @@ const App = () => {
     setFilterText(inputValue);
   };
 
+  const handleCheckbox = (checked) => {
+    setFilterOrigin(checked);
+  };
+
   //RENDER FILTER + SORT
   const renderFilteredCharacters = () => {
-    const filteredCharacters = characters.filter((character) => {
+    let filteredCharacters = characters
+    .filter((character) => {
       const characterName = character.name;
       return characterName.toLowerCase().includes(filterText.toLowerCase());
-    });
+    })
+    if(filterOrigin) {
+      filteredCharacters = filteredCharacters.filter(
+        (character) => {
+          const characterLocationName = character.location.name;
+          const characterOriginName = character.origin.name;
+          return characterLocationName === characterOriginName;
+        }
+      );
+    }
+    ;
     // sorts the filteredCharacters array's names alphabetically
     const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
       if (a.name < b.name) {
@@ -87,6 +104,7 @@ const App = () => {
           <Header />
           <main className="main">
             <Filters handleFilter={handleFilter} filterText={filterText} />
+            <FilterOrigin handleCheckbox={handleCheckbox} filterOrigin={filterOrigin}/>
             <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
           </main>
         </Route>
