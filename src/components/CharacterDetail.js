@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "../stylesheets/layout/CharacterDetail.scss";
 
 const CharacterDetail = (props) => {
@@ -34,6 +35,11 @@ const CharacterDetail = (props) => {
         <p className="detail-card__text">
           <strong>Episodes:</strong> {props.episode}
         </p>
+        <Link to={"/"}>
+          <button type="button" className="detail-card__button">
+            Go back
+          </button>
+        </Link>
       </article>
     </main>
   );

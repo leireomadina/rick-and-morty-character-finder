@@ -2,7 +2,7 @@
 
 // Character detail card styles
 
-.detail-card{
+.detail-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,28 @@
     }
   }
 
-  &__name{
+  &__button {
+    width: 120px;
+    font-size: 0.9rem;
+    font-family: $font-main;
+    background-color: $color-light;
+    color: $color-font-secondary;
+    padding: 8px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+    font-weight: bold;
+    margin: 8px 0;
+
+    &:hover {
+      background-color: lighten($color-secondary, 8%);
+      color: $color-font-main;
+    }
+  }
+
+  &__name {
     margin-bottom: 15px;
     max-width: 270px;
   }
