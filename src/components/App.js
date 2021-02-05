@@ -34,6 +34,9 @@ const App = () => {
     }
     if (data.name === "gender") {
       setFilterGender(data.value);
+    } 
+    if (data.name === "status") {
+      setFilterStatus(data.value);
     }
   };
 
@@ -41,7 +44,8 @@ const App = () => {
   const renderFilteredCharacters = () => {
     let filteredCharacters = characters
       .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()))
-      .filter((character) => filterGender === "all" || character.gender.toLowerCase() === filterGender);
+      .filter((character) => filterGender === "all" || character.gender.toLowerCase() === filterGender)
+      .filter((character) => filterStatus === "all" || character.status.toLowerCase() === filterStatus);
 
     // sorts the filteredCharacters array's names alphabetically
     const sortedcharactersNames = filteredCharacters.sort(function sortByName(
@@ -100,6 +104,7 @@ const App = () => {
               handleFilters={handleFilters}
               filterName={filterName}
               filterGender={filterGender}
+              filterStatus={filterStatus}
             />
             <CharacterList
               characters={renderFilteredCharacters()}

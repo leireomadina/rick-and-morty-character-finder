@@ -13,19 +13,6 @@ const Filters = (props) => {
     props.handleFilters(data);
   };
 
-  /*
-  const handleNameFilter = (event) => {
-    const inputValue = event.target.value;
-    props.handleNameFilter(inputValue);
-  };
-
-  const handleGenderFilter = (event) => {
-    const selectGenderValue = event.target.value;
-    console.log(selectGenderValue);
-    props.handleGenderFilter(selectGenderValue);
-  };
-  */
-
   // Prevents the default submit event of the form
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -48,11 +35,11 @@ const Filters = (props) => {
         </select>
         {/* Status */}
         <label htmlFor="status">Status</label>
-        <select id="status" name="status">
+        <select id="status" name="status" onChange={handleFilters} value={props.filterStatus}>
           <option value="all">All</option>
           <option value="alive">Alive</option>
           <option value="dead">Dead</option>
-          <option value="unkown">Unkown</option>
+          <option value="unknown">Unknown</option>
         </select>
       </form>
     </section>
