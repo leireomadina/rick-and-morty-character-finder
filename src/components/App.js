@@ -9,12 +9,12 @@ import "../stylesheets/App.scss";
 import Filters from "./Filters";
 
 const App = () => {
-
   // STATE
   const [characters, setCharacters] = useState([]);
   //Defines a new state for the text written in the input
   const [filterName, setfilterName] = useState("");
   const [filterGender, setFilterGender] = useState("all");
+  const [filterStatus, setFilterStatus] = useState("all");
 
   //API
   useEffect(
@@ -28,48 +28,30 @@ const App = () => {
   );
 
   //EVENT
-
   const handleFilters = (data) => {
     if (data.name === "character") {
       setfilterName(data.value);
-    } 
+    }
     if (data.name === "gender") {
       setFilterGender(data.value);
     }
   };
-  /*
-  const handleNameFilter = (inputValue) => {
-    setfilterName(inputValue);
-  };
-
-  const handleGenderFilter = (selectGenderValue) => {
-    setFilterGender(selectGenderValue);
-    console.log("He entrado");
-  };
-  */
 
   //RENDER FILTER + SORT
   const renderFilteredCharacters = () => {
-    let filteredCharacters = characters.filter((character) => {
-      const characterName = character.name;
-      return characterName.toLowerCase().includes(filterName.toLowerCase());
-    });
-    
-      // filteredCharacters = filteredCharacters.filter(
-      //   (character) => {
-      //     const characterGender = character.gender;
-      //     console.log(characterGender);
-      //     return characterGender.toLowerCase().includes(filterGender.toLowerCase());
-      //   }
-      // );
-
+    let filteredCharacters = characters
+      .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()))
+      .filter((character) => filterGender === "all" || character.gender.toLowerCase() === filterGender);
 
     // sorts the filteredCharacters array's names alphabetically
-    const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
+    const sortedcharactersNames = filteredCharacters.sort(function sortByName(
+      a,
+      b
+    ) {
       if (a.name < b.name) {
         //a will come before b
         return -1;
-      } 
+      }
       if (a.name > b.name) {
         //b will come before a
         return 1;
@@ -77,6 +59,7 @@ const App = () => {
       // when a equals b:
       return 0;
     });
+
     return filteredCharacters;
   };
 
@@ -91,15 +74,15 @@ const App = () => {
     if (clickedCharacter !== undefined) {
       return (
         <>
-        <Header />
-        <CharacterDetail
-          image={clickedCharacter.image}
-          name={clickedCharacter.name}
-          status={clickedCharacter.status}
-          species={clickedCharacter.species}
-          origin={clickedCharacter.origin.name}
-          episode={clickedCharacter.episode.length}
-        />
+          <Header />
+          <CharacterDetail
+            image={clickedCharacter.image}
+            name={clickedCharacter.name}
+            status={clickedCharacter.status}
+            species={clickedCharacter.species}
+            origin={clickedCharacter.origin.name}
+            episode={clickedCharacter.episode.length}
+          />
         </>
       );
     } else {
@@ -113,8 +96,15 @@ const App = () => {
         <Route exact path="/">
           <Header />
           <main className="main">
-            <Filters handleFilters={handleFilters} filterName={filterName} filterGender={filterGender}/>
-            <CharacterList characters={renderFilteredCharacters()} filterName={filterName}/>
+            <Filters
+              handleFilters={handleFilters}
+              filterName={filterName}
+              filterGender={filterGender}
+            />
+            <CharacterList
+              characters={renderFilteredCharacters()}
+              filterName={filterName}
+            />
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />

@@ -39,15 +39,15 @@ const Filters = (props) => {
         <label htmlFor="character"></label>
         <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilters} value={props.filterName} className="form-section__input"></input>
         {/* Gender */}
-        <label htmlFor="gender"></label>
+        <label htmlFor="gender">Gender</label>
         <select id="gender" name="gender" onChange={handleFilters} value={props.filterGender}>
           <option value="all">All</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
-          <option value="unkown">Other</option>
+          <option value="unknown">Unknown</option>
         </select>
         {/* Status */}
-        <label htmlFor="status"></label>
+        <label htmlFor="status">Status</label>
         <select id="status" name="status">
           <option value="all">All</option>
           <option value="alive">Alive</option>
