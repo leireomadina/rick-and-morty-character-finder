@@ -9,26 +9,28 @@ import "../stylesheets/App.scss";
 import Filters from "./Filters";
 
 const App = () => {
-  // STATE
+  // States
   const [characters, setCharacters] = useState([]);
-  //Defines a new state for the text written in the input
   const [filterName, setfilterName] = useState("");
   const [filterGender, setFilterGender] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterSortedNyName, setfilterSortedNyName] = useState(false);
 
-  //API
+  // API
   useEffect(
     () => {
-      api.getDataFromApi().then((data) => {
-        setCharacters(data);
-      });
+      api
+        .getDataFromApi()
+        .then((data) => {
+          setCharacters(data);
+        })
+        .catch(console.error);
     },
     //Empty array so that the first useEffect parameter gets executed only once
     []
   );
 
-  //EVENT
+  // Handlers
   const handleFilters = (data) => {
     if (data.name === "character") {
       setfilterName(data.value);
@@ -44,7 +46,7 @@ const App = () => {
     }
   };
 
-  //RENDER FILTER + SORT
+  // Filters
   const renderFilteredCharacters = () => {
     let filteredCharacters = characters
       .filter((character) =>
@@ -62,20 +64,14 @@ const App = () => {
       );
 
     if (filterSortedNyName) {
-      // sorts the filteredCharacters array's names alphabetically
-      const sortedcharactersNames = filteredCharacters.sort(function sortByName(
-        a,
-        b
-      ) {
+      // sorts the characters alphabetically
+      filteredCharacters.sort((a, b) => {
         if (a.name < b.name) {
-          //a will come before b
           return -1;
         }
         if (a.name > b.name) {
-          //b will come before a
           return 1;
         }
-        // when a equals b:
         return 0;
       });
     }
@@ -83,14 +79,14 @@ const App = () => {
     return filteredCharacters;
   };
 
-  //RENDER DETAIL
+  // Render character detail page
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.characterId);
     const clickedCharacter = characters.find((character) => {
       const characterId = character.id;
       return routeCharacterId === characterId;
     });
-    //renders the searched character if it finds it. Else, returns a not found message
+
     if (clickedCharacter !== undefined) {
       return (
         <>
