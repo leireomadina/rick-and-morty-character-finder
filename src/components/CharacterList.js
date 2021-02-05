@@ -25,7 +25,7 @@ const CharacterList = (props) => {
   const notFound = () => {
     // Renders the not found component if the list of characters is empty after during the user's search
     if (characterItems.length === 0) {
-      return <CharacterNotFound filterText={props.filterText}/>
+      return <CharacterNotFound filterName={props.filterName}/>
     }
   };
  
@@ -43,7 +43,7 @@ CharacterList.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
   species: PropTypes.string,
-  filterText: PropTypes.string,
+  filterName: PropTypes.string,
 };
 
 export default CharacterList;

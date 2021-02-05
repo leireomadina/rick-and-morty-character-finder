@@ -13,7 +13,8 @@ const App = () => {
   // STATE
   const [characters, setCharacters] = useState([]);
   //Defines a new state for the text written in the input
-  const [filterText, setFilterText] = useState("");
+  const [filterName, setfilterName] = useState("");
+  const [filterGender, setFilterGender] = useState("all");
 
   //API
   useEffect(
@@ -27,16 +28,42 @@ const App = () => {
   );
 
   //EVENT
-  const handleFilter = (inputValue) => {
-    setFilterText(inputValue);
+
+  const handleFilters = (data) => {
+    if (data.name === "character") {
+      setfilterName(data.value);
+    } 
+    if (data.name === "gender") {
+      setFilterGender(data.value);
+    }
   };
+  /*
+  const handleNameFilter = (inputValue) => {
+    setfilterName(inputValue);
+  };
+
+  const handleGenderFilter = (selectGenderValue) => {
+    setFilterGender(selectGenderValue);
+    console.log("He entrado");
+  };
+  */
 
   //RENDER FILTER + SORT
   const renderFilteredCharacters = () => {
-    const filteredCharacters = characters.filter((character) => {
+    let filteredCharacters = characters.filter((character) => {
       const characterName = character.name;
-      return characterName.toLowerCase().includes(filterText.toLowerCase());
+      return characterName.toLowerCase().includes(filterName.toLowerCase());
     });
+    
+      // filteredCharacters = filteredCharacters.filter(
+      //   (character) => {
+      //     const characterGender = character.gender;
+      //     console.log(characterGender);
+      //     return characterGender.toLowerCase().includes(filterGender.toLowerCase());
+      //   }
+      // );
+
+
     // sorts the filteredCharacters array's names alphabetically
     const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
       if (a.name < b.name) {
@@ -86,8 +113,8 @@ const App = () => {
         <Route exact path="/">
           <Header />
           <main className="main">
-            <Filters handleFilter={handleFilter} filterText={filterText} />
-            <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
+            <Filters handleFilters={handleFilters} filterName={filterName} filterGender={filterGender}/>
+            <CharacterList characters={renderFilteredCharacters()} filterName={filterName}/>
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
@@ -98,9 +125,9 @@ const App = () => {
 
 App.propTypes = {
   characters: PropTypes.array,
-  handleFilter: PropTypes.func,
+  handleFilters: PropTypes.func,
   renderDetail: PropTypes.func,
-  filterText: PropTypes.string,
+  filterName: PropTypes.string,
   image: PropTypes.string,
   name: PropTypes.string,
   status: PropTypes.string,

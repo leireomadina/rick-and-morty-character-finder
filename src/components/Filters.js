@@ -4,25 +4,43 @@ import "../stylesheets/layout/Filters.scss";
 
 const Filters = (props) => {
   //EVENTS
-  const handleFilter = (event) => {
-    const inputValue = event.target.value;
-    props.handleFilter(inputValue);
+
+  const handleFilters = (event) => {
+    const data = {
+      name: event.target.name,
+      value: event.target.value,
+    }
+    props.handleFilters(data);
   };
 
-  //Prevents the default submit event of the form
+  /*
+  const handleNameFilter = (event) => {
+    const inputValue = event.target.value;
+    props.handleNameFilter(inputValue);
+  };
+
+  const handleGenderFilter = (event) => {
+    const selectGenderValue = event.target.value;
+    console.log(selectGenderValue);
+    props.handleGenderFilter(selectGenderValue);
+  };
+  */
+
+  // Prevents the default submit event of the form
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+  
 
   return (
     <section className="form-section">
       <form onSubmit={handleSubmit}>
         {/* Character name */}
         <label htmlFor="character"></label>
-        <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilter} value={props.filterText} className="form-section__input"></input>
+        <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilters} value={props.filterName} className="form-section__input"></input>
         {/* Gender */}
         <label htmlFor="gender"></label>
-        <select id="gender" name="gender">
+        <select id="gender" name="gender" onChange={handleFilters} value={props.filterGender}>
           <option value="all">All</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
@@ -42,8 +60,8 @@ const Filters = (props) => {
 };
 
 Filters.propTypes = {
-  handleFilter: PropTypes.func,
-  filterText: PropTypes.string
+  handleChange: PropTypes.func,
+  filterName: PropTypes.string
 };
 
 export default Filters;
