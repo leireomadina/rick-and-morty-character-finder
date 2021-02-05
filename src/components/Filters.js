@@ -9,6 +9,7 @@ const Filters = (props) => {
     const data = {
       name: event.target.name,
       value: event.target.value,
+      checked: event.target.checked
     }
     props.handleFilters(data);
   };
@@ -41,6 +42,9 @@ const Filters = (props) => {
           <option value="dead">Dead</option>
           <option value="unknown">Unknown</option>
         </select>
+        {/* Sort by name */}
+        <label htmlFor="sorted">Sort by name:</label>
+        <input type="checkbox" name="sorted" id="sorted" checked={props.filterSortedNyName} onChange={handleFilters}></input>
       </form>
     </section>
   )
@@ -48,7 +52,10 @@ const Filters = (props) => {
 
 Filters.propTypes = {
   handleChange: PropTypes.func,
-  filterName: PropTypes.string
+  filterName: PropTypes.string,
+  filterGender: PropTypes.string,
+  filterStatus: PropTypes.string,
+  filterSortedNyName: PropTypes.bool
 };
 
 export default Filters;

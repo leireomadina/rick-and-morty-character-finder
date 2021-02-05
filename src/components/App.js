@@ -15,6 +15,7 @@ const App = () => {
   const [filterName, setfilterName] = useState("");
   const [filterGender, setFilterGender] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
+  const [filterSortedNyName, setfilterSortedNyName] = useState(false);
 
   //API
   useEffect(
@@ -34,35 +35,50 @@ const App = () => {
     }
     if (data.name === "gender") {
       setFilterGender(data.value);
-    } 
+    }
     if (data.name === "status") {
       setFilterStatus(data.value);
+    }
+    if (data.name === "sorted") {
+      setfilterSortedNyName(data.checked);
     }
   };
 
   //RENDER FILTER + SORT
   const renderFilteredCharacters = () => {
     let filteredCharacters = characters
-      .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()))
-      .filter((character) => filterGender === "all" || character.gender.toLowerCase() === filterGender)
-      .filter((character) => filterStatus === "all" || character.status.toLowerCase() === filterStatus);
+      .filter((character) =>
+        character.name.toLowerCase().includes(filterName.toLowerCase())
+      )
+      .filter(
+        (character) =>
+          filterGender === "all" ||
+          character.gender.toLowerCase() === filterGender
+      )
+      .filter(
+        (character) =>
+          filterStatus === "all" ||
+          character.status.toLowerCase() === filterStatus
+      );
 
-    // sorts the filteredCharacters array's names alphabetically
-    const sortedcharactersNames = filteredCharacters.sort(function sortByName(
-      a,
-      b
-    ) {
-      if (a.name < b.name) {
-        //a will come before b
-        return -1;
-      }
-      if (a.name > b.name) {
-        //b will come before a
-        return 1;
-      }
-      // when a equals b:
-      return 0;
-    });
+    if (filterSortedNyName) {
+      // sorts the filteredCharacters array's names alphabetically
+      const sortedcharactersNames = filteredCharacters.sort(function sortByName(
+        a,
+        b
+      ) {
+        if (a.name < b.name) {
+          //a will come before b
+          return -1;
+        }
+        if (a.name > b.name) {
+          //b will come before a
+          return 1;
+        }
+        // when a equals b:
+        return 0;
+      });
+    }
 
     return filteredCharacters;
   };
@@ -105,6 +121,7 @@ const App = () => {
               filterName={filterName}
               filterGender={filterGender}
               filterStatus={filterStatus}
+              filterSortedNyName={filterSortedNyName}
             />
             <CharacterList
               characters={renderFilteredCharacters()}
@@ -123,6 +140,9 @@ App.propTypes = {
   handleFilters: PropTypes.func,
   renderDetail: PropTypes.func,
   filterName: PropTypes.string,
+  filterGender: PropTypes.string,
+  filterStatus: PropTypes.string,
+  filterSortedNyName: PropTypes.bool,
   image: PropTypes.string,
   name: PropTypes.string,
   status: PropTypes.string,
