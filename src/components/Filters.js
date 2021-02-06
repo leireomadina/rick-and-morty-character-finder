@@ -24,27 +24,37 @@ const Filters = (props) => {
     <section className="form-section">
       <form onSubmit={handleSubmit}>
         {/* Character name */}
-        <label htmlFor="character"></label>
-        <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilters} value={props.filterName} className="form-section__input"></input>
+        <fieldset className="form-section__container">
+          <label htmlFor="character" className="form-section__label">Name</label>
+          <input type="text" id="character" name="character" placeholder="Search you favorite character" onChange={handleFilters} value={props.filterName} className="form-section__input"></input>
+        </fieldset>
         {/* Gender */}
-        <label htmlFor="gender">Gender</label>
-        <select id="gender" name="gender" onChange={handleFilters} value={props.filterGender}>
-          <option value="all">All</option>
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-          <option value="unknown">Unknown</option>
-        </select>
+        <fieldset className="form-section__container">
+          <label htmlFor="gender" className="form-section__label">Gender</label>
+          <select id="gender" name="gender" onChange={handleFilters} value={props.filterGender} className="form-section__select">
+            <option value="all" className="form-section__option">All</option>
+            <option value="female" className="form-section__option">Female</option>
+            <option value="male" className="form-section__option">Male</option>
+            <option value="unknown" className="form-section__option">Unknown</option>
+          </select>
+        </fieldset>
         {/* Status */}
-        <label htmlFor="status">Status</label>
-        <select id="status" name="status" onChange={handleFilters} value={props.filterStatus}>
-          <option value="all">All</option>
-          <option value="alive">Alive</option>
-          <option value="dead">Dead</option>
-          <option value="unknown">Unknown</option>
-        </select>
+        <fieldset className="form-section__container">
+          <label htmlFor="status" className="form-section__label">Status</label>
+          <select id="status" name="status" onChange={handleFilters} value={props.filterStatus} className="form-section__select">
+            <option value="all" className="form-section__option">All</option>
+            <option value="alive" className="form-section__option">Alive</option>
+            <option value="dead" className="form-section__option">Dead</option>
+            <option value="unknown" className="form-section__option">Unknown</option>
+          </select>
+        </fieldset>
         {/* Sort by name */}
-        <label htmlFor="sorted">Sort by name:</label>
-        <input type="checkbox" name="sorted" id="sorted" checked={props.filterSortedNyName} onChange={handleFilters}></input>
+        <fieldset className="form-section__container">
+        <input type="checkbox" name="sorted" id="sorted" checked={props.filterSortedNyName} onChange={handleFilters} className="form-section__checkbox"></input>
+        <span className="form-section__checkbox--customized"></span>
+          <label htmlFor="sorted" className="form-section__label">Sort by name</label>
+        </fieldset>
+        {/* <button type="button">Reset</button> */}
       </form>
     </section>
   )

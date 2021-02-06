@@ -14,19 +14,17 @@
 }
 
 .main-header{
-  padding-top: 15px;
   text-align: center;
-  padding-bottom: 15px;
 
   &__image {
-    height: 150px;
+    height: 120px;
     width: auto;
     animation-name: neon;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
 
     @media all and (min-width: 768px) {
-      height: 200px;
+      height: 180px;
     }
   }
 }
