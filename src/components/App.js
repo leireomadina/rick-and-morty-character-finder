@@ -9,70 +9,96 @@ import "../stylesheets/App.scss";
 import Filters from "./Filters";
 
 const App = () => {
-
-  // STATE
+  // States
   const [characters, setCharacters] = useState([]);
-  //Defines a new state for the text written in the input
-  const [filterText, setFilterText] = useState("");
+  const [filterName, setfilterName] = useState("");
+  const [filterGender, setFilterGender] = useState("all");
+  const [filterStatus, setFilterStatus] = useState("all");
+  const [filterSortedNyName, setfilterSortedNyName] = useState(false);
 
-  //API
+  // API
   useEffect(
     () => {
-      api.getDataFromApi().then((data) => {
-        setCharacters(data);
-      });
+      api
+        .getDataFromApi()
+        .then((data) => {
+          setCharacters(data);
+        })
+        .catch(console.error);
     },
     //Empty array so that the first useEffect parameter gets executed only once
     []
   );
 
-  //EVENT
-  const handleFilter = (inputValue) => {
-    setFilterText(inputValue);
+  // Handlers
+  const handleFilters = (data) => {
+    if (data.name === "character") {
+      setfilterName(data.value);
+    }
+    if (data.name === "gender") {
+      setFilterGender(data.value);
+    }
+    if (data.name === "status") {
+      setFilterStatus(data.value);
+    }
+    if (data.name === "sorted") {
+      setfilterSortedNyName(data.checked);
+    }
   };
 
-  //RENDER FILTER + SORT
+  // Filters
   const renderFilteredCharacters = () => {
-    const filteredCharacters = characters.filter((character) => {
-      const characterName = character.name;
-      return characterName.toLowerCase().includes(filterText.toLowerCase());
-    });
-    // sorts the filteredCharacters array's names alphabetically
-    const sortedcharactersNames = filteredCharacters.sort(function sortByName(a, b) {
-      if (a.name < b.name) {
-        //a will come before b
-        return -1;
-      } 
-      if (a.name > b.name) {
-        //b will come before a
-        return 1;
-      }
-      // when a equals b:
-      return 0;
-    });
+    let filteredCharacters = characters
+      .filter((character) =>
+        character.name.toLowerCase().includes(filterName.toLowerCase())
+      )
+      .filter(
+        (character) =>
+          filterGender === "all" ||
+          character.gender.toLowerCase() === filterGender
+      )
+      .filter(
+        (character) =>
+          filterStatus === "all" ||
+          character.status.toLowerCase() === filterStatus
+      );
+
+    if (filterSortedNyName) {
+      // sorts the characters alphabetically
+      filteredCharacters.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+
     return filteredCharacters;
   };
 
-  //RENDER DETAIL
+  // Render character detail page
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.characterId);
     const clickedCharacter = characters.find((character) => {
       const characterId = character.id;
       return routeCharacterId === characterId;
     });
-    //renders the searched character if it finds it. Else, returns a not found message
+
     if (clickedCharacter !== undefined) {
       return (
         <>
-        <Header />
-        <CharacterDetail
-          image={clickedCharacter.image}
-          name={clickedCharacter.name}
-          status={clickedCharacter.status}
-          species={clickedCharacter.species}
-          origin={clickedCharacter.origin.name}
-          episode={clickedCharacter.episode.length}
-        />
+          <Header />
+          <CharacterDetail
+            image={clickedCharacter.image}
+            name={clickedCharacter.name}
+            status={clickedCharacter.status}
+            species={clickedCharacter.species}
+            origin={clickedCharacter.origin.name}
+            episode={clickedCharacter.episode.length}
+          />
         </>
       );
     } else {
@@ -86,8 +112,17 @@ const App = () => {
         <Route exact path="/">
           <Header />
           <main className="main">
-            <Filters handleFilter={handleFilter} filterText={filterText} />
-            <CharacterList characters={renderFilteredCharacters()} filterText={filterText}/>
+            <Filters
+              handleFilters={handleFilters}
+              filterName={filterName}
+              filterGender={filterGender}
+              filterStatus={filterStatus}
+              filterSortedNyName={filterSortedNyName}
+            />
+            <CharacterList
+              characters={renderFilteredCharacters()}
+              filterName={filterName}
+            />
           </main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
@@ -98,9 +133,12 @@ const App = () => {
 
 App.propTypes = {
   characters: PropTypes.array,
-  handleFilter: PropTypes.func,
+  handleFilters: PropTypes.func,
   renderDetail: PropTypes.func,
-  filterText: PropTypes.string,
+  filterName: PropTypes.string,
+  filterGender: PropTypes.string,
+  filterStatus: PropTypes.string,
+  filterSortedNyName: PropTypes.bool,
   image: PropTypes.string,
   name: PropTypes.string,
   status: PropTypes.string,

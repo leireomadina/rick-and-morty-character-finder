@@ -7,7 +7,7 @@ const CharacterNotFound = (props) => {
   return (
     <div className="not-found-container">
       <p className="not-found-container__text">
-        There isn't any character that matches the word {props.filterText} !
+        There isn't any character that matches the word {props.filterName} !
       </p>
       <img
         src={gif}
@@ -20,7 +20,7 @@ const CharacterNotFound = (props) => {
 };
 
 CharacterNotFound.propTypes = {
-  filterText: PropTypes.string,
+  filterName: PropTypes.string,
 };
 
 export default CharacterNotFound;

@@ -1,16 +1,16 @@
 const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 
-const getDataFromApi = () => {
-  return fetch(ENDPOINT)
-    .then((response) => response.json())
-    .then((data) => {
-      // returns an array of 20 characters
-      return data.results;
-    })
-    .catch(error => console.log("Ha sucedido un error:", error));
+const getDataFromApi = async() => {
+  try {
+    const resp = await fetch(ENDPOINT);
+    if(!resp.ok) throw "Im sorry, there has been a server error";
+    const data = await resp.json();
+    return data.results;
+  } catch (err){
+    throw err;
+  }
 };
 
-// Exporting as an object in case we add more functions in the future
 export default {
   getDataFromApi: getDataFromApi,
 };

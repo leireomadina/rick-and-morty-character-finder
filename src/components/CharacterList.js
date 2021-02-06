@@ -6,7 +6,6 @@ import "../stylesheets/layout/CharacterList.scss";
 
 
 const CharacterList = (props) => {
-  //MAP
   const characterItems = props.characters.map((character) => {
     return (
       <>
@@ -23,9 +22,9 @@ const CharacterList = (props) => {
   });
 
   const notFound = () => {
-    // Renders the not found component if the list of characters is empty after during the user's search
+    // Renders the not found component if the list of characters is empty
     if (characterItems.length === 0) {
-      return <CharacterNotFound filterText={props.filterText}/>
+      return <CharacterNotFound filterName={props.filterName}/>
     }
   };
  
@@ -43,7 +42,7 @@ CharacterList.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
   species: PropTypes.string,
-  filterText: PropTypes.string,
+  filterName: PropTypes.string,
 };
 
 export default CharacterList;

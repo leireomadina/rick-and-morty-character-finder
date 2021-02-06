@@ -4,11 +4,20 @@
 
 .cards-section {
   overflow-y: scroll;
-  height: calc(100vh - 330px);  
+  height: calc(100vh - 450px);  
   scroll-behavior: smooth;
+
+  @media all and (min-width: 768px) {
+    height: calc(100vh - 510px);  
+  }
+
+  @media all and (min-width: 1200px) {
+    height: calc(100vh - 350px);  
+  }
+
   // Scrollbar styles:
   &::-webkit-scrollbar {
-    width: 3px;
+    width: 4px;
   }
   &::-webkit-scrollbar-track {
     background: $color-font-secondary;
@@ -31,7 +40,7 @@
     grid-template-columns: repeat(auto-fill, 250px);
   }
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 900px) {
     max-width: 800px;
   }
 
@@ -42,5 +51,9 @@
   &__item {
     align-self: center;
     justify-self: center;
+
+    @media all and (min-width: 768px) {
+      justify-self: normal;
+    }
   }
 }

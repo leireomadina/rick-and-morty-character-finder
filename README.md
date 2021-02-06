@@ -60,9 +60,10 @@ A continuación se muestra una lista de las funcionalidades que he ido añadiend
 
 Próximamente implementaré las siguientes nuevas funcionalidades en la página para mejorar la experiencia de usuario. Se aceptan sugerencias 😊
 
-- [ ] Añadir un botón en la tarjeta de detalle del personaje para poder volver a la página principal.
+- [x] Añadir un botón en la tarjeta de detalle del personaje para poder volver a la página principal.
 - [ ] Incorporar un cursor personalizado.
-- [ ] Añadir un botón que permita elegir a la usuaria si quiere ordenar o no los personajes alfabéticamente.
+- [x] Añadir un botón que permita elegir a la usuaria si quiere ordenar o no los personajes alfabéticamente.
+- [x] Añadir nuevos filtros por género y estado.
 
 ---
 
