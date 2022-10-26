@@ -9,6 +9,9 @@ const CharacterDetail = (props) => {
       return "💀";
     }
   };
+  const checkSpecies = () => {
+    return props.species === "Human" ? "🌎" : "👽";
+  };
 
   return (
     <main className="detail-page">
@@ -28,6 +31,7 @@ const CharacterDetail = (props) => {
         </p>
         <p className="detail-card__text">
           <strong>Species:</strong> {props.species}
+          <span className="detail-card__icon"> {checkSpecies()}</span>
         </p>
         <p className="detail-card__text">
           <strong>Origin:</strong> {props.origin}
