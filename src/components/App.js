@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Route, Switch } from "react-router-dom";
+import PropTypes from "prop-types";
 import api from "../service/api";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-import "../stylesheets/App.scss";
 import Filters from "./Filters";
+import "../stylesheets/App.scss";
 
 const App = () => {
-  // States
   const [characters, setCharacters] = useState([]);
   const [filterName, setfilterName] = useState("");
   const [filterGender, setFilterGender] = useState("all");
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterSortedNyName, setfilterSortedNyName] = useState(false);
 
-  // API
+  // API call
   useEffect(
     () => {
       api
@@ -82,22 +81,22 @@ const App = () => {
   // Render character detail page
   const renderDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.characterId);
-    const clickedCharacter = characters.find((character) => {
+    const selectedCharacter = characters.find((character) => {
       const characterId = character.id;
       return routeCharacterId === characterId;
     });
 
-    if (clickedCharacter !== undefined) {
+    if (selectedCharacter !== undefined) {
       return (
         <>
           <Header />
           <CharacterDetail
-            image={clickedCharacter.image}
-            name={clickedCharacter.name}
-            status={clickedCharacter.status}
-            species={clickedCharacter.species}
-            origin={clickedCharacter.origin.name}
-            episode={clickedCharacter.episode.length}
+            image={selectedCharacter.image}
+            name={selectedCharacter.name}
+            status={selectedCharacter.status}
+            species={selectedCharacter.species}
+            origin={selectedCharacter.origin.name}
+            episode={selectedCharacter.episode.length}
           />
         </>
       );

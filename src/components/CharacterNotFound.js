@@ -7,7 +7,7 @@ const CharacterNotFound = (props) => {
   return (
     <div className="not-found-container">
       <p className="not-found-container__text">
-        There isn't any character that matches the word {props.filterName} !
+        There isn't any character that matches your search!
       </p>
       <img
         src={gif}

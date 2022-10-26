@@ -1,15 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "../stylesheets/layout/CharacterCard.scss";
 
 const CharacterCard = (props) => {
   const checkSpecies = () => {
-    if (props.species === "Human") {
-      return "🌎";
-    } else {
-      return "👽";
-    }
+    return props.species === "Human" ? "🌎" : "👽";
   };
 
   return (
