@@ -1,5 +1,6 @@
 @import "core/normalize";
 @import "core/reset";
+@import "core/mixins.scss";
 @import "core/variables";
 
 .App {
@@ -14,11 +15,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media all and (min-width: 768px) {
+  @include tablet {
     height: 100vh;
   }
 
-  @media all and (min-width: 1200px) {
+  @include desktop {
     background-position: center bottom;
   }
 }

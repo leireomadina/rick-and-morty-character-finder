@@ -1,3 +1,5 @@
+@import "../core/mixins.scss";
+
 @keyframes neon {
   from {
     opacity: 1;
@@ -20,7 +22,7 @@
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
 
-    @media all and (min-width: 768px) {
+    @include tablet {
       height: 180px;
     }
   }
