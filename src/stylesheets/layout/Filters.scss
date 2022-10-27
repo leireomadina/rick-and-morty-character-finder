@@ -1,34 +1,31 @@
 @import "../core/variables.scss";
 
-// Form section styles
-
 .form-section {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   
-
   &__container {
     width: 100%;
-    border: none;
     margin-bottom: 10px;
+    border: none;
     
     @media all and (min-width: 1200px) {
       padding-bottom: 10px;
     }
 
     @media all and (min-width: 1200px) {
-      width: 250px;
       display: inline-block;
+      width: 250px;
       max-width: 1200px;
     }
   }
 
   &__label {
     display: inline-block;
-    color: $color-font-main;
     margin-bottom: 5px;
+    color: $color-light;
     font-size: 1rem;
   }
 
@@ -36,47 +33,44 @@
     display: block;
     width: 320px;
     height: 35px;
+    margin-bottom: 8px;
+    padding: 0 10px;
     background-color: transparent;
-    // background-color: $color-light;
-    // border: none;
     border: 2px solid $color-dark;
     border-radius: 3px;
-    // border-bottom: 2px solid $color-main;
     font-size: 1rem;
-    padding: 0 10px;
-    color: $color-font-main;
-    margin-bottom: 8px;
+    color: $color-light;
 
     @media all and (min-width: 768px) {
       width: 450px;
     }
 
     @media all and (min-width: 1200px) {
-      width: 250px;
       display: inline-block;
+      width: 250px;
       margin-right: 15px;
     }
 
     &:focus {
-      outline: 2px solid $color-font-main;
+      outline: 2px solid $color-light;
     }
 
     &::placeholder {
-      color: $color-font-terciary;
+      color: $color-grey;
     }
   }
 
   &__select {
-    width: 320px;
     display: block;
+    width: 320px;
     height: 35px;
     margin-bottom: 8px;
+    padding: 3px;
     font-size: 1rem;
     background-color: transparent;
-    color: $color-font-main;
+    color: $color-light;
     border: 2px solid $color-dark;
     border-radius: 3px;
-    padding: 3px;
     cursor: pointer;
 
     @media all and (min-width: 768px) {
@@ -93,23 +87,16 @@
       border: 2px solid white;
     }
 
-    // &::after {
-      // content: "";
-      // width: 0.8rem;
-      // height: 0.5rem;
-      // background-color: $color-secondary;
-      // clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-    // }
   }
 
   &__option {
     background-color: $color-light;
-    color: $color-font-secondary;
+    color: $color-dark;
     font-size: 1rem;
 
     &:checked {
       background-color: $color-main;
-      color: $color-font-main;
+      color: $color-light;
     }
   }
 
@@ -119,20 +106,5 @@
     width: 16px;
     position: relative;
     top: 2px;
-    // display: inline-block;
-
-    // &--customized {
-    //   cursor: pointer;
-    //   display: inline-block;
-    //   height: 16px;
-    //   width: 16px;
-    //   border: 2px solid $color-font-secondary;
-    //   border-radius: 3px;
-    //   margin-right: 10px;
-
-    //   &--customized-checked {
-    //     background-color: $color-main;
-    //   }
-    // }
   }
 }

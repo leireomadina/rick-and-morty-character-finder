@@ -11,16 +11,13 @@ ul {
 }
 
 // Link reset styles
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
 // Form reset styles
-
 select {
-  // appearance: none;
   background-color: transparent;
   border: none;
   padding: 0 1em 0 0;
@@ -36,10 +33,3 @@ select {
 select::-ms-expand {
   display: none;
 }
-
-// input[type="checkbox"] {
-//   opacity: 0;
-//   // display: none;
-//   width: 1em;
-//   height: 1em;
-// }

@@ -1,10 +1,8 @@
 @import "../core/variables.scss";
 
-// Cards container styles
-
 .cards-section {
-  overflow-y: scroll;
   height: calc(100vh - 450px);  
+  overflow-y: scroll;
   scroll-behavior: smooth;
 
   @media all and (min-width: 768px) {
@@ -20,7 +18,7 @@
     width: 4px;
   }
   &::-webkit-scrollbar-track {
-    background: $color-font-secondary;
+    background: $color-dark;
   }
   //handle and hover styles 
   &::-webkit-scrollbar-thumb {

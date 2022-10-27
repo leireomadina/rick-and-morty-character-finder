@@ -1,22 +1,20 @@
 @import "../core/variables.scss";
 
-// Character not found message styles
-
 .not-found-container {
-  text-align: center;
-  margin: 0 auto;
   max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  text-align: center;
 
   &__text {
-    font-size: 20px;
-    color: $color-font-main;
     margin-bottom: 15px;
+    font-size: 20px;
+    color: $color-light;
   }
 
   &__gif {
     width: 300px;
-    border: 8px solid $color-font-secondary;
+    border: 8px solid $color-dark;
 
     @media all and (min-width: 768px) {
       width: 600px;
