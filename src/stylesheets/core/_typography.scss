@@ -1,0 +1,42 @@
+/**
+ * Typography
+ * =================================
+    - Blender Pro Book (regular)
+ *  - Blender Pro Bold
+ *  - Play Regular
+ *  - Play Bold
+ */
+
+@font-face {
+	font-family: 'Blender Pro Book';
+	src: local('Blender Pro Book'), url('/fonts/BlenderPro-Book.eot'),
+		url('/fonts/BlenderPro-Book.woff2') format('woff2'),
+		url('/fonts/BlenderPro-Book.woff') format('woff'),
+		url('/fonts/BlenderPro-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Blender Pro Bold';
+	src: local('Blender Pro Bold'), url('/fonts/BlenderPro-Bold.eot'),
+		url('/fonts/BlenderPro-Bold.woff2') format('woff2'),
+		url('/fonts/BlenderPro-Bold.woff') format('woff'),
+		url('/fonts/BlenderPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Play Regular';
+	src: local('Play Regular'), url('/fonts/Play-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Play Bold';
+	src: local('Play Bold'), url('/fonts/Play-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
