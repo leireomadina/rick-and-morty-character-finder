@@ -4,12 +4,12 @@
 .not-found-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
 
   &__text {
-    margin-bottom: 15px;
-    font-size: 20px;
+    margin-bottom: 1rem;
+    font-size: $font-title;
     color: $color-light;
   }
 

@@ -16,14 +16,15 @@
   text-align: center;
 
   &__image {
-    height: 120px;
+    height: 20vw;
+    min-height: 120px;
     width: auto;
     animation-name: neon;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
 
     @include tablet {
-      height: 180px;
+      max-height: 200px;
     }
   }
 }

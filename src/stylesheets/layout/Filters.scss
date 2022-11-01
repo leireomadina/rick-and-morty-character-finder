@@ -3,54 +3,56 @@
 
 .form-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 2rem;
+
+  form {
+    width: 100%;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+  }
   
   &__container {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
+    padding: 0;
     border: none;
-    
-    @include desktop {
-      padding-bottom: 10px;
+
+    &:last-of-type {
+      align-self: end;
+
+      & label {
+        margin: 0;
+      }
     }
 
     @include desktop {
-      display: inline-block;
-      width: 250px;
-      max-width: 1200px;
+      margin-bottom: 0;
     }
   }
 
   &__label {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 0.375rem;
     color: $color-light;
-    font-size: 1rem;
+    font-size: $font-body;
   }
 
   &__input {
     display: block;
-    width: 320px;
-    height: 35px;
-    margin-bottom: 8px;
-    padding: 0 10px;
+    width: 100%;
+    min-height: 35px;
+    padding: 0 0.75rem;
     background-color: transparent;
     border: 2px solid $color-dark;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: $font-body;
     color: $color-light;
-
-    @include tablet {
-      width: 450px;
-    }
-
-    @include desktop {
-      display: inline-block;
-      width: 250px;
-      margin-right: 15px;
-    }
 
     &:focus {
       outline: 2px solid $color-light;
@@ -59,30 +61,20 @@
     &::placeholder {
       color: $color-grey;
     }
+
   }
 
   &__select {
     display: block;
-    width: 320px;
+    width: 100%;
     height: 35px;
-    margin-bottom: 8px;
-    padding: 3px;
-    font-size: 1rem;
+    padding-left: 0.75rem;
+    font-size: $font-body;
     background-color: transparent;
     color: $color-light;
     border: 2px solid $color-dark;
     border-radius: 3px;
     cursor: pointer;
-
-    @include tablet {
-      width: 450px;
-    }
-
-    @include desktop {
-      width: 250px;
-      display: inline-block;
-      margin-right: 15px;
-    }
 
     &:focus {
       border: 2px solid white;
@@ -93,7 +85,7 @@
   &__option {
     background-color: $color-light;
     color: $color-dark;
-    font-size: 1rem;
+    font-size: $font-body;
 
     &:checked {
       background-color: $color-main;
@@ -102,10 +94,8 @@
   }
 
   &__checkbox {
-    margin-right: 10px;
-    height: 16px;
-    width: 16px;
-    position: relative;
-    top: 2px;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
   }
 }

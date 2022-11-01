@@ -2,16 +2,20 @@
 @import "../core/variables.scss";
 
 .cards-section {
-  height: calc(100vh - 450px);  
+  height: calc(100vh - 424px);
   overflow-y: scroll;
   scroll-behavior: smooth;
 
   @include tablet {
-    height: calc(100vh - 510px);  
+    height: calc(100vh - 489px);  
   }
-
+  
   @include desktop {
-    height: calc(100vh - 350px);  
+    height: calc(100vh - 324px);
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   // Scrollbar styles:
@@ -32,27 +36,15 @@
 
 .cards-container{
   display: grid;
-  grid-template-columns: 1fr;
-
-  @media all and (min-width: 500px) {
-    max-width: 500px;
-    grid-template-columns: repeat(auto-fill, 250px);
-  }
-
-  @media all and (min-width: 900px) {
-    max-width: 800px;
-  }
+  grid-template-columns: repeat(auto-fill,minmax(170px, 1fr));
+  grid-gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
 
   @include desktop {
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    grid-gap: 2rem;
   }
 
-  &__item {
-    align-self: center;
-    justify-self: center;
-
-    @include tablet {
-      justify-self: normal;
-    }
-  }
 }

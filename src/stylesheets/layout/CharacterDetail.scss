@@ -2,22 +2,18 @@
 @import "../core/variables.scss";
 
 .detail-card {
-  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  padding: 15px 10px 10px 10px;
+  width: auto;
+  margin-top: 2rem;
+  padding: 2rem 3rem;
   background-color: $color-dark;
   text-align: center;
   border-radius: 15px;
   color: $color-light;
   box-shadow: 3px 3px 3px 0px $color-dark;
-
-  @include tablet {
-    width: 300px;
-  }
 
   &__image-container {
     width: 100%;
@@ -25,23 +21,19 @@
   }
 
   &__image {
-    width: 180px;
+    width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
     border-radius: 50%;
-    
-    @include tablet {
-      width: 250px;
-    }
   }
 
   &__button {
-    width: 120px;
-    margin: 8px 0;
-    padding: 8px;
+    min-width: 120px;
+    margin: 0.5rem 0;
+    padding: 0.5rem 4rem;
     background-color: $color-light;
     color: $color-dark;
-    font-size: 0.9rem;
+    font-size: $font-body;
     font-family: $font-main;
     font-weight: bold;
     cursor: pointer;
@@ -57,12 +49,10 @@
   }
 
   &__name {
-    max-width: 270px;
     margin-bottom: 1rem;
   }
 
   &__text {
-    max-width: 270px;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 }
