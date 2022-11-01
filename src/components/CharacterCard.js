@@ -20,11 +20,13 @@ const CharacterCard = (props) => {
           title={`${props.name}`}
           className="card__image"
         />
-        <h2 className="card__name">{props.name}</h2>
-        <p className="card__species">
-          {props.species}
-          <span className="card__species--icon"> {checkSpecies()}</span>
-        </p>
+        <div className="card__inner">
+          <h2 className="card__name">{props.name}</h2>
+          <p className="card__species">
+            {props.species}
+            <span className="card__species--icon"> {checkSpecies()}</span>
+          </p>
+        </div>
       </article>
     </Link>
   );

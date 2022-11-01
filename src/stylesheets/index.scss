@@ -4,10 +4,10 @@
 body {
   font-family: $font-main;
   font-size: $font-body;
-  overflow: hidden;
 }
 
 .main{
+  flex-grow: 1;
   width: 100%;
   
   @include tablet {

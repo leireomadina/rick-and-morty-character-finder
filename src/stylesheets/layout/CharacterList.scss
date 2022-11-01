@@ -1,50 +1,25 @@
-@import "../core/mixins.scss";
-@import "../core/variables.scss";
+@import '../core/mixins.scss';
+@import '../core/variables.scss';
 
 .cards-section {
-  height: calc(100vh - 424px);
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-
-  @include tablet {
-    height: calc(100vh - 489px);  
-  }
-  
-  @include desktop {
-    height: calc(100vh - 324px);
-    display: flex;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  // Scrollbar styles:
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: $color-dark;
-  }
-  //handle and hover styles 
-  &::-webkit-scrollbar-thumb {
-    background:  $color-main;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background:  $color-terciary;
-  }
+	@include desktop {
+		display: flex;
+		justify-content: space-between;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
-.cards-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(170px, 1fr));
-  grid-gap: 1rem;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	grid-gap: 1rem;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 100%;
 
-  @include desktop {
-    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
-    grid-gap: 2rem;
-  }
-
+	@include desktop {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 2rem;
+	}
 }

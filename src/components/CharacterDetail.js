@@ -24,26 +24,28 @@ const CharacterDetail = (props) => {
             className="detail-card__image"
           />
         </div>
-        <h2 className="detail-card__name">{props.name}</h2>
-        <p className="detail-card__text">
-          <strong>Status:</strong> {props.status}
-          <span className="detail-card__icon"> {checkStatus()}</span>
-        </p>
-        <p className="detail-card__text">
-          <strong>Species:</strong> {props.species}
-          <span className="detail-card__icon"> {checkSpecies()}</span>
-        </p>
-        <p className="detail-card__text">
-          <strong>Origin:</strong> {props.origin}
-        </p>
-        <p className="detail-card__text">
-          <strong>Episodes:</strong> {props.episode}
-        </p>
-        <Link to={"/"}>
-          <button type="button" className="detail-card__button">
-            Go back
-          </button>
-        </Link>
+        <div className="detail-card__content">
+          <h2 className="detail-card__name">{props.name}</h2>
+          <p className="detail-card__text">
+            <strong>Status:</strong> {props.status}
+            <span className="detail-card__icon"> {checkStatus()}</span>
+          </p>
+          <p className="detail-card__text">
+            <strong>Species:</strong> {props.species}
+            <span className="detail-card__icon"> {checkSpecies()}</span>
+          </p>
+          <p className="detail-card__text">
+            <strong>Origin:</strong> {props.origin}
+          </p>
+          <p className="detail-card__text">
+            <strong>Episodes:</strong> {props.episode}
+          </p>
+          <Link to={"/"}>
+            <button type="button" className="detail-card__button">
+              Go back
+            </button>
+          </Link>
+        </div>
       </article>
     </main>
   );
