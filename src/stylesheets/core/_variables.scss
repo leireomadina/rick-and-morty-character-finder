@@ -9,17 +9,24 @@
  */
 
  // Typography
-$font-main: 'Roboto', sans-serif;
-$font-secondary: 'Roboto Mono', monospace;
+$font-main: 'Blender Pro Book', sans-serif;
+$font-main-bold: 'Blender Pro Bold', sans-serif;
+$font-secondary: 'Play Regular', sans-serif;
+$font-secondary-bold: 'Play Bold', sans-serif;
 $font-body: 1rem;
 $font-body-small: 0.875rem;
 $font-title-big: 1.5rem;
 $font-title: 1.125rem;
 
 // Colors - Brand
-$color-main: rgb(238, 81, 171);
-$color-secondary: rgb(249, 3, 95);
-$color-terciary: rgb(226, 25, 102);
+$color-primary: #59e7f9;
+$color-primary-shadow: #59e6f939;
+$color-secondary: #ff577e;
+$color-secondary-shadow: #ff577e2c;
+$color-tertiary: #fdf88c;
+// $color-red: #FF003C;
+// $color-grey: #554B41;
+
 // Colors - Neutral
 $color-dark: rgb(15, 15, 15);
 $color-light: rgb(240, 240, 240);
