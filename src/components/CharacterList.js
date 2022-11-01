@@ -19,17 +19,18 @@ const CharacterList = (props) => {
 	});
 
 	const notFound = () => {
-		if (characterItems.length === 0) {
-			return <CharacterNotFound filterName={props.filterName} />;
-		}
+		return <CharacterNotFound filterName={props.filterName} />;
 	};
 
-	return (
-		<section className="cards-section">
-			<ul className="cards-container">{characterItems}</ul>
-			{notFound()}
-		</section>
-	);
+	if (characterItems.length === 0) {
+		return notFound();
+	} else {
+		return (
+			<section className="cards-section">
+				<ul className="cards-container">{characterItems}</ul>
+			</section>
+		);
+	}
 };
 
 CharacterList.propTypes = {
