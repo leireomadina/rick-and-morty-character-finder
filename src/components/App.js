@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
-import api from "../service/api";
+import getDataFromApi from "../service/api";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
@@ -18,8 +18,7 @@ const App = () => {
   // API call
   useEffect(
     () => {
-      api
-        .getDataFromApi()
+      getDataFromApi()
         .then((data) => {
           setCharacters(data);
         })

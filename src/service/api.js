@@ -3,7 +3,7 @@ const ENDPOINT = "https://rickandmortyapi.com/api/character/";
 const getDataFromApi = async() => {
   try {
     const resp = await fetch(ENDPOINT);
-    if(!resp.ok) throw "Im sorry, there has been a server error";
+    if(!resp.ok) throw new Error("Im sorry, there has been a server error");
     const data = await resp.json();
     return data.results;
   } catch (err){
@@ -11,6 +11,4 @@ const getDataFromApi = async() => {
   }
 };
 
-export default {
-  getDataFromApi: getDataFromApi,
-};
+export default getDataFromApi;
