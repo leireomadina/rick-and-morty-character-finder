@@ -26,6 +26,9 @@ const CharacterCard = (props) => {
             {props.species}
             <span className="card__species--icon"> {checkSpecies()}</span>
           </p>
+          <svg className="card__icon" width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 12.0404L13.4469 0H7.84063L18.525 10.0606H0V13.9798H18.4031L7.88125 24H13.4469L26 12.0404Z"/>
+          </svg>
         </div>
       </article>
     </Link>
