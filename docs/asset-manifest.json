@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "./static/css/main.e714688b.chunk.css",
-    "main.js": "./static/js/main.67ef82eb.chunk.js",
-    "main.js.map": "./static/js/main.67ef82eb.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.528ad5a7.js",
-    "runtime-main.js.map": "./static/js/runtime-main.528ad5a7.js.map",
-    "static/js/2.b64f5fa0.chunk.js": "./static/js/2.b64f5fa0.chunk.js",
-    "static/js/2.b64f5fa0.chunk.js.map": "./static/js/2.b64f5fa0.chunk.js.map",
+    "main.css": "./static/css/main.a7c67628.css",
+    "main.js": "./static/js/main.fc484d7e.js",
+    "static/media/morty-gif.gif": "./static/media/morty-gif.9e946522928001c1ec3d.gif",
+    "static/media/neon-logo.png": "./static/media/neon-logo.6eb4f643b3724d04e411.png",
+    "static/media/Play-Bold.ttf": "./static/media/Play-Bold.b78f3be6adabf73cde7f.ttf",
+    "static/media/Play-Regular.ttf": "./static/media/Play-Regular.e0424c5771f87080b05e.ttf",
+    "static/media/BlenderPro-Book.eot": "./static/media/BlenderPro-Book.46a6ce888ccea96f810e.eot",
+    "static/media/BlenderPro-Book.ttf": "./static/media/BlenderPro-Book.322ca372c0773754fbed.ttf",
+    "static/media/BlenderPro-Bold.eot": "./static/media/BlenderPro-Bold.0d5fe602a4d3b49dc089.eot",
+    "static/media/BlenderPro-Bold.ttf": "./static/media/BlenderPro-Bold.7914e5f0e7197737aad4.ttf",
+    "static/media/BlenderPro-Book.woff": "./static/media/BlenderPro-Book.ed35621e4ed57e55f6df.woff",
+    "static/media/BlenderPro-Bold.woff": "./static/media/BlenderPro-Bold.fc9db5751a382ad8879a.woff",
+    "static/media/BlenderPro-Book.woff2": "./static/media/BlenderPro-Book.92e9aa2ff6c583c09e05.woff2",
+    "static/media/BlenderPro-Bold.woff2": "./static/media/BlenderPro-Bold.1848317044de0fb8793f.woff2",
     "index.html": "./index.html",
-    "static/css/main.e714688b.chunk.css.map": "./static/css/main.e714688b.chunk.css.map",
-    "static/js/2.b64f5fa0.chunk.js.LICENSE.txt": "./static/js/2.b64f5fa0.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "./static/media/Play-Regular.e0424c57.ttf",
-    "static/media/morty-gif.9e946522.gif": "./static/media/morty-gif.9e946522.gif",
-    "static/media/neon-logo.6eb4f643.png": "./static/media/neon-logo.6eb4f643.png"
+    "main.a7c67628.css.map": "./static/css/main.a7c67628.css.map",
+    "main.fc484d7e.js.map": "./static/js/main.fc484d7e.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.528ad5a7.js",
-    "static/js/2.b64f5fa0.chunk.js",
-    "static/css/main.e714688b.chunk.css",
-    "static/js/main.67ef82eb.chunk.js"
+    "static/css/main.a7c67628.css",
+    "static/js/main.fc484d7e.js"
   ]
 }
