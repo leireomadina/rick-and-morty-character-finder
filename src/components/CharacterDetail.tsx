@@ -1,16 +1,32 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import "../stylesheets/layout/CharacterDetail.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../stylesheets/layout/CharacterDetail.scss';
 
-const CharacterDetail = (props) => {
+interface CharacterDetailProps {
+  status: string;
+  name: string;
+  image: string;
+  species: string;
+  origin: string;
+  episode: string[];
+}
+
+function CharacterDetail({
+  status,
+  species,
+  image,
+  name,
+  origin,
+  episode,
+}: CharacterDetailProps) {
   const checkStatus = () => {
-    if (props.status === "Dead") {
-      return "💀";
+    if (status === 'Dead') {
+      return '💀';
     }
+    return true;
   };
   const checkSpecies = () => {
-    return props.species === "Human" ? "🌎" : "👽";
+    return species === 'Human' ? '🌎' : '👽';
   };
 
   return (
@@ -18,29 +34,29 @@ const CharacterDetail = (props) => {
       <article className="detail-card">
         <div className="detail-card__image-container">
           <img
-            src={props.image}
-            alt={`${props.name}`}
-            title={`${props.name}`}
+            src={image}
+            alt={`${name}`}
+            title={`${name}`}
             className="detail-card__image"
           />
         </div>
         <div className="detail-card__content">
-          <h2 className="detail-card__name">{props.name}</h2>
+          <h2 className="detail-card__name">{name}</h2>
           <p className="detail-card__text">
-            <strong>Status:</strong> {props.status}
+            <strong>Status:</strong> {status}
             <span className="detail-card__icon"> {checkStatus()}</span>
           </p>
           <p className="detail-card__text">
-            <strong>Species:</strong> {props.species}
+            <strong>Species:</strong> {species}
             <span className="detail-card__icon"> {checkSpecies()}</span>
           </p>
           <p className="detail-card__text">
-            <strong>Origin:</strong> {props.origin}
+            <strong>Origin:</strong> {origin}
           </p>
           <p className="detail-card__text">
-            <strong>Episodes:</strong> {props.episode}
+            <strong>Episodes:</strong> {episode.length}
           </p>
-          <Link to={"/"}>
+          <Link to="/">
             <button type="button" className="detail-card__button">
               Go back
             </button>
@@ -49,15 +65,6 @@ const CharacterDetail = (props) => {
       </article>
     </main>
   );
-};
-
-CharacterDetail.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string,
-  status: PropTypes.string,
-  species: PropTypes.string,
-  origin: PropTypes.string,
-  episode: PropTypes.number,
-};
+}
 
 export default CharacterDetail;
