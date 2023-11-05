@@ -5,7 +5,7 @@ import gif from '../images/morty-gif.gif';
 function CharacterNotFound() {
   return (
     <div className="not-found-container">
-      <p className="not-found-container__text">
+      <p className="not-found-container__text" aria-live="assertive">
         There isn&apos;t any character that matches your search!
       </p>
       <img
