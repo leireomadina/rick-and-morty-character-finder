@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, RouteComponentProps, Switch } from 'react-router-dom';
+import { motion as m } from "framer-motion"
 import getDataFromApi from '../service/api';
 import Header from './Header';
 import CharacterList from './CharacterList';
@@ -127,7 +128,12 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header />
-          <main className="main">
+          <m.main
+            className="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <Filters
               handleFilters={handleFilters}
               filterName={filterName}
@@ -139,7 +145,7 @@ function App() {
               characters={renderFilteredCharacters()}
               filterName={filterName}
             />
-          </main>
+          </m.main>
         </Route>
         <Route path="/character-detail/:characterId" component={renderDetail} />
       </Switch>

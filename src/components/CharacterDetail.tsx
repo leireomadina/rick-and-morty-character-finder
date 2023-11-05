@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion as m } from "framer-motion"
 import '../stylesheets/layout/CharacterDetail.scss';
 
 interface CharacterDetailProps {
@@ -30,7 +31,12 @@ function CharacterDetail({
   };
 
   return (
-    <main className="detail-page">
+    <m.main
+      className="detail-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <article className="detail-card">
         <div className="detail-card__image-container">
           <img
@@ -63,7 +69,7 @@ function CharacterDetail({
           </Link>
         </div>
       </article>
-    </main>
+    </m.main>
   );
 }
 
