@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion as m } from "framer-motion"
 import '../stylesheets/layout/CharacterCard.scss';
 
 interface CharacterCardProps {
@@ -16,7 +17,17 @@ function CharacterCard({ id, image, name, species }: CharacterCardProps) {
 
   return (
     <Link to={`/character-detail/${id}`} title={"See this character's details"}>
-      <article className="card">
+      <m.article
+        className="card"
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.1, ease: "easeOut" },
+        }}
+        whileTap={{ 
+          scale: 0.93,
+          transition: { duration: 0.1, ease: "easeOut" }
+        }}
+      >
         <img
           src={image}
           alt={`${name}`}
@@ -40,7 +51,7 @@ function CharacterCard({ id, image, name, species }: CharacterCardProps) {
             <path d="M26 12.0404L13.4469 0H7.84063L18.525 10.0606H0V13.9798H18.4031L7.88125 24H13.4469L26 12.0404Z" />
           </svg>
         </div>
-      </article>
+      </m.article>
     </Link>
   );
 }

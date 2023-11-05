@@ -10,7 +10,7 @@
 	background-color: $color-primary;
 	color: $color-dark;
 	box-shadow: 3px 3px 20px 0px $color-primary-shadow;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease-out;
 	border: 5px solid $color-dark;
 
 	&:hover {
