@@ -19,6 +19,14 @@ function CharacterCard({ id, image, name, species }: CharacterCardProps) {
     <Link to={`/character-detail/${id}`} title={"See this character's details"}>
       <m.article
         className="card"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        variants={{
+          visible: { opacity: 1 },
+          hidden: { opacity: 0 }
+        }}
         whileHover={{
           scale: 1.05,
           transition: { duration: 0.1, ease: "easeOut" },
