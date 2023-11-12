@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import 'intersection-observer';
@@ -32,7 +32,6 @@ describe('Character list component', () => {
   it('renders without errors', () => {
     renderCharacterList();
     const ulElement = screen.getByTestId('character-list');
-    console.log(ulElement)
     expect(ulElement).toHaveClass('cards-container');
   });
   
