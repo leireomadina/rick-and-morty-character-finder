@@ -35,7 +35,7 @@ function CharacterList({ characters }: CharacterListProps): JSX.Element {
 
   return (
     <section className="cards-section">
-      <ul className="cards-container">{characterItems}</ul>
+      <ul className="cards-container" data-testid="character-list">{characterItems}</ul>
     </section>
   );
 }
