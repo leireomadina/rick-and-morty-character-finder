@@ -50,16 +50,16 @@ function CharacterDetail({
           <h2 className="detail-card__name">{name}</h2>
           <p className="detail-card__text">
             <strong>Status:</strong> {status}
-            <span className="detail-card__icon"> {checkStatus()}</span>
+            <span className="detail-card__icon" data-testid="status"> {checkStatus()}</span>
           </p>
           <p className="detail-card__text">
             <strong>Species:</strong> {species}
-            <span className="detail-card__icon"> {checkSpecies()}</span>
+            <span className="detail-card__icon" data-testid="species"> {checkSpecies()}</span>
           </p>
           <p className="detail-card__text">
             <strong>Origin:</strong> {origin}
           </p>
-          <p className="detail-card__text">
+          <p className="detail-card__text" data-testid="episodes">
             <strong>Episodes:</strong> {episode.length}
           </p>
           <Link to="/">
